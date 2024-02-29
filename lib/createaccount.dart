@@ -1,40 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({super.key});
+class CreateAccoutScreen extends StatefulWidget {
+  const CreateAccoutScreen({super.key});
 
   @override
-  State<SigninScreen> createState() => _SigninScreenState();
+  State<CreateAccoutScreen> createState() => _CreateAccoutScreenState();
 }
 
-class _SigninScreenState extends State<SigninScreen> {
+class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
   bool passwordVisible = false;
-  @override
-  void initState() {
-    super.initState();
-    passwordVisible = true;
-  }
+  bool agree = false;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 140,
+              height: 106,
             ),
             Text(
-              "Sign In",
+              "Create Accout",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(
+              height: 16,
+            ),
             Text(
-              "Hi! Welcome back, you’ve been missed",
+              "Fill your information below or register",
+              style: GoogleFonts.inter(
+                color: Color(0xff000000),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            Text(
+              "With your social account",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
                 fontSize: 14,
@@ -46,6 +53,39 @@ class _SigninScreenState extends State<SigninScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Name",
+                      style: GoogleFonts.inter(
+                          fontSize: 16, fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 42,
+                      child: TextField(
+                        style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            color: Color(0XFF78A408),
+                            fontWeight: FontWeight.w500),
+                        // controller: _name,
+                        cursorColor: Colors.amber,
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Color(0XFF78A408)),
+                              borderRadius: BorderRadius.circular(15)),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          hintStyle: GoogleFonts.poppins(
+                              color: Colors.black45,
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
@@ -131,23 +171,30 @@ class _SigninScreenState extends State<SigninScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 11,
+                    height: 5,
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline,
+                  Row(
+                    children: [
+                      Material(
+                        child: Checkbox(
+                          value: agree,
+                          onChanged: (value) {
+                            setState(() {
+                              agree = value ?? false;
+                            });
+                          },
                         ),
                       ),
-                    ),
+                      Text(
+                        'Agree with Term & Condition',
+                        style: GoogleFonts.inter(
+                            fontSize: 14, fontWeight: FontWeight.w400),
+                        overflow: TextOverflow.ellipsis,
+                      )
+                    ],
                   ),
                   SizedBox(
-                    height: 36,
+                    height: 20,
                   ),
                   SizedBox(
                     height: 42,
@@ -178,13 +225,13 @@ class _SigninScreenState extends State<SigninScreen> {
                 Container(
                   height: 1,
                   width: 111,
-                  color: Colors.black,
+                  color: Colors.black38,
                 ),
                 Text("Or sign in with"),
                 Container(
                   height: 1,
                   width: 111,
-                  color: Colors.black,
+                  color: Colors.black38,
                 ),
               ],
             ),
@@ -236,7 +283,7 @@ class _SigninScreenState extends State<SigninScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Don't have an account?",
+                  "Already have an account? ",
                   style: GoogleFonts.inter(
                       color: Colors.black,
                       fontSize: 14,
@@ -248,7 +295,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 InkWell(
                   onTap: () {},
                   child: Text(
-                    'Sign Up',
+                    'Sign In',
                     style: TextStyle(
                       color: Colors.blue,
                       decoration: TextDecoration.underline,

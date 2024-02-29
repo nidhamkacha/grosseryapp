@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:grosseryapp/createaccount.dart';
+import 'package:grosseryapp/homescreen.dart';
 import 'package:grosseryapp/loadingscreen.dart';
 import 'package:grosseryapp/onbordingscreen.dart';
 import 'package:grosseryapp/signinscreen.dart';
+import 'package:grosseryapp/varificationscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +24,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const LoadingScreen(),
       // home: const OnbodingScreen(),
-      home: const SigninScreen(),
+      // home: const SigninScreen(),
+      // home: const CreateAccoutScreen(),
+      // home: const VarificationScreen(),
+      home: const HomeScreen(),
     );
   }
 }
