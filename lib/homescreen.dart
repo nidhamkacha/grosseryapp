@@ -12,16 +12,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   List<String> imagepaths = [
-    'assets/images/image-removebg-preview (52) 1.png',
     'assets/images/image-removebg-preview (53) 1.png',
     'assets/images/image-removebg-preview (54) 1.png',
-    'assets/images/image-removebg-preview (55) 1.png',
-    'assets/images/image-removebg-preview (56) 1.png',
-    'assets/images/image-removebg-preview (57) 1.png',
+    'assets/images/image-removebg-preview (52) 1.png',
+    'assets/images/image-removebg-preview (61) 1.png',
+    'assets/images/image-removebg-preview (58) 1.png',
     'assets/images/image-removebg-preview (58) 1.png',
     'assets/images/image-removebg-preview (59) 1.png',
     'assets/images/image-removebg-preview (60) 1.png',
-    'assets/images/image-removebg-preview (61) 1.png',
     'assets/images/image-removebg-preview (62) 1.png',
     'assets/images/image-removebg-preview (64) 1.png',
     'assets/images/image-removebg-preview (65) 1.png',
@@ -35,8 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
     'Tea, Coff...',
     'Fruits & ...',
     'Cold Drin...',
-    'Cold Drin...',
-    'Cold Drin...',
+    'Meat',
+    'Baby Care',
+    'Cleaning ...',
+    'Pet Care',
+    'Atta, Ric...',
   ];
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -191,39 +192,130 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: GridView.builder(
-                itemCount: 10,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 20,
-                    mainAxisExtent: 95,
-                    childAspectRatio: width / (height / 4)),
-                itemBuilder: (context, index) {
-                  return Container(
-                    // height: 200,
-                    width: 92,
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: GridView.builder(
+              shrinkWrap: true,
+              padding: EdgeInsets.zero,
+              itemCount: productnames.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 20,
+                mainAxisExtent: 110,
+              ),
+              itemBuilder: (context, index) {
+                return Container(
+                  height: 200,
+                  width: 92,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        imagepaths[index],
+                        fit: BoxFit.cover,
+                        scale: 3,
+                      ),
+                      Text(productnames[index]),
+                    ],
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black38),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                );
+              },
+            ),
+          ),
+          SizedBox(
+            height: 36,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+              height: 129,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 243, 219, 101),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Image.asset(
-                          'assets/images/Group 87.png',
-                          fit: BoxFit.fill,
+                        Row(
+                          children: [
+                            Text(
+                              "Fresh",
+                              style: GoogleFonts.inter(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Fruits",
+                              style: GoogleFonts.inter(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text("data"),
+                        Text(
+                          "Get Upto  30% Off",
+                          style: GoogleFonts.inter(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            // Respond to button press
+                          },
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Color(0xff188806)),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Order Now",
+                                style: GoogleFonts.inter(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_rounded,
+                                size: 18,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black38),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  );
-                },
+                  ),
+                  Image.asset('assets/images/mixfruits.png')
+                ],
               ),
             ),
-          )
+          ),
+          
         ],
       ),
     );
