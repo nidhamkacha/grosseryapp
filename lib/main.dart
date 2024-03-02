@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grosseryapp/createaccount.dart';
-import 'package:grosseryapp/homescreen.dart';
-import 'package:grosseryapp/loadingscreen.dart';
-import 'package:grosseryapp/onbordingscreen.dart';
-import 'package:grosseryapp/shopscreen.dart';
-import 'package:grosseryapp/signinscreen.dart';
-import 'package:grosseryapp/varificationscreen.dart';
+import 'package:grosseryapp/pages/createaccount.dart';
+import 'package:grosseryapp/pages/homescreen.dart';
+import 'package:grosseryapp/pages/loadingscreen.dart';
+import 'package:grosseryapp/pages/onbordingscreen.dart';
+import 'package:grosseryapp/pages/shopscreen.dart';
+import 'package:grosseryapp/pages/signinscreen.dart';
+import 'package:grosseryapp/pages/varificationscreen.dart';
 
 void main() {
   runApp(const MyApp());
