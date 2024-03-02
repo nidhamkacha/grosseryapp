@@ -5,6 +5,7 @@ import 'package:grosseryapp/pages/loadingscreen.dart';
 import 'package:grosseryapp/pages/onbordingscreen.dart';
 import 'package:grosseryapp/pages/shopscreen.dart';
 import 'package:grosseryapp/pages/signinscreen.dart';
+import 'package:grosseryapp/pages/storescreen.dart';
 import 'package:grosseryapp/pages/varificationscreen.dart';
 
 void main() {
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       // home: const CreateAccoutScreen(),
       // home: const VarificationScreen(),
       // home: const HomeScreen(),
-      home: const ShopScreen(),
+      // home: const ShopScreen(),
+      home: const StoreScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ShopScreen extends StatefulWidget {
@@ -108,29 +109,100 @@ class _ShopScreenState extends State<ShopScreen> {
             padding: EdgeInsets.zero,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisExtent: 265,
+              mainAxisExtent: 270,
             ),
             itemBuilder: (context, index) {
               return Container(
                 height: 288,
-                child: Column(
-                  children: [
-                    Image.asset(
-                      imagepath[index],
-                      fit: BoxFit.cover,
-                      scale: 3,
-                    ),
-                    Text(categories[index]),
-                    Text(productname[index]),
-                    Text(quantity[index]),
-                    Row(
-                      children: [
-                        Text(price[index]),
-                        // IconButton(onPressed: (){},icon: Icon(Icons.add),),
-                        TextButton(onPressed: () {}, child: Text('Add'))
-                      ],
-                    )
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          imagepath[index],
+                          fit: BoxFit.cover,
+                          scale: 3,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Text(
+                        categories[index],
+                        style: GoogleFonts.inter(
+                          color: Colors.black45,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        productname[index],
+                        style: GoogleFonts.inter(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        quantity[index],
+                        style: GoogleFonts.inter(
+                          color: Colors.black45,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            price[index],
+                            style: GoogleFonts.inter(
+                              color: Colors.black,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          // IconButton(onPressed: (){},icon: Icon(Icons.add),),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Add',
+                              style: GoogleFonts.inter(
+                                color: Color(0xff188806),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            style: ButtonStyle(
+                              side: MaterialStateProperty.all<BorderSide>(
+                                BorderSide(
+                                  style: BorderStyle.solid,
+                                  color: Colors.green,
+                                  width: 2, // Change this to the width you want
+                                ),
+                              ),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
                 decoration: BoxDecoration(
                   border: Border.all(color: Color.fromARGB(255, 210, 210, 210)),
