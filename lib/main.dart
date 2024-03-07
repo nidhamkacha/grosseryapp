@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
       // home: const VarificationScreen(),
       // home: const HomeScreen(),
       home: const ShopScreen(),
+      
       // home: const StoreScreen(),
       // home: const HomeScreen(),
     );
