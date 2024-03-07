@@ -10,21 +10,36 @@ class ShopScreen extends StatefulWidget {
 }
 
 class _ShopScreenState extends State<ShopScreen> {
-  List<String> imagepath = [
-    'assets/images/Bittersweet Chocolate.png',
-    'assets/images/eggbox.png',
-    'assets/images/vegetable butter.png',
-    'assets/images/beer.png',
+  var data = [
+    {
+      "imagepath": 'assets/images/Bittersweet Chocolate.png',
+      "categories": 'Chocolate',
+      "price": '₹ 120',
+      "productname": 'Bittersweet Chocolate',
+      "quantity": '2*90g'
+    },
+    {
+      "imagepath": 'assets/images/eggbox.png',
+      "categories": 'Egg',
+      "price": '₹ 80',
+      "productname": 'Egg box',
+      "quantity": '2*80g',
+    },
+    {
+      "imagepath": 'assets/images/vegetable butter.png',
+      "categories": 'Butter',
+      "price": '₹ 150',
+      "productname": 'Vegetable oil butter...',
+      "quantity": '2*85g',
+    },
+    {
+      "imagepath": 'assets/images/beer.png',
+      "categories": 'Beer',
+      "price": '₹ 100',
+      "productname": 'Lager beer',
+      "quantity": '1/2 lit'
+    },
   ];
-  List<String> categories = ['Chocolate', 'Egg', 'Butter', 'Beer'];
-  List<String> price = ['₹ 100', '₹ 200', '₹ 300', '₹ 400'];
-  List<String> productname = [
-    'Bittersweet Chocolate',
-    'Egg box',
-    'Vegetable oil butter...',
-    'Lager beer'
-  ];
-  List<String> quantity = ['2*90g', '2*80g', '2*85g', '1/2 lit'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,112 +118,114 @@ class _ShopScreenState extends State<ShopScreen> {
               ],
             ),
           ),
-          GridView.builder(
+          GridView(
             shrinkWrap: true,
-            itemCount: imagepath.length,
+            // itemCount: imagepath.length,
             padding: EdgeInsets.zero,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisExtent: 270,
             ),
-            itemBuilder: (context, index) {
-              return Container(
-                height: 288,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image.asset(
-                          imagepath[index],
-                          fit: BoxFit.cover,
-                          scale: 3,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 14,
-                      ),
-                      Text(
-                        categories[index],
-                        style: GoogleFonts.inter(
-                          color: Colors.black45,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        productname[index],
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                        quantity[index],
-                        style: GoogleFonts.inter(
-                          color: Colors.black45,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            price[index],
-                            style: GoogleFonts.inter(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
+            children: data
+                .map((e) => Container(
+                      height: 288,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Align(
+                              alignment: Alignment.center,
+                              child: Image.asset(
+                                e["imagepath"].toString(),
+                                fit: BoxFit.cover,
+                                scale: 3,
+                              ),
                             ),
-                          ),
-                          // IconButton(onPressed: (){},icon: Icon(Icons.add),),
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Add',
+                            SizedBox(
+                              height: 14,
+                            ),
+                            Text(
+                              e["categories"].toString(),
                               style: GoogleFonts.inter(
-                                color: Color(0xff188806),
+                                color: Colors.black45,
                                 fontSize: 14,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
-                            style: ButtonStyle(
-                              side: MaterialStateProperty.all<BorderSide>(
-                                BorderSide(
-                                  style: BorderStyle.solid,
-                                  color: Colors.green,
-                                  width: 2, // Change this to the width you want
-                                ),
-                              ),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              e["productname"].toString(),
+                              style: GoogleFonts.inter(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Color.fromARGB(255, 210, 210, 210)),
-                ),
-              );
-            },
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Text(
+                              e["quantity"].toString(),
+                              style: GoogleFonts.inter(
+                                color: Colors.black45,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  e["price"].toString(),
+                                  style: GoogleFonts.inter(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                // IconButton(onPressed: (){},icon: Icon(Icons.add),),
+                                TextButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Add',
+                                    style: GoogleFonts.inter(
+                                      color: Color(0xff188806),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  style: ButtonStyle(
+                                    side: MaterialStateProperty.all<BorderSide>(
+                                      BorderSide(
+                                        style: BorderStyle.solid,
+                                        color: Colors.green,
+                                        width:
+                                            2, // Change this to the width you want
+                                      ),
+                                    ),
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromARGB(255, 210, 210, 210)),
+                      ),
+                    ))
+                .toList(),
           ),
           SizedBox(
             height: 80,

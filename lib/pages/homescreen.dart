@@ -11,37 +11,57 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  List<String> imagepaths = [
-    'assets/images/image-removebg-preview (53) 1.png',
-    'assets/images/image-removebg-preview (54) 1.png',
-    'assets/images/image-removebg-preview (52) 1.png',
-    'assets/images/image-removebg-preview (61) 1.png',
-    'assets/images/image-removebg-preview (58) 1.png',
-    'assets/images/image-removebg-preview (58) 1.png',
-    'assets/images/image-removebg-preview (59) 1.png',
-    'assets/images/image-removebg-preview (60) 1.png',
-    'assets/images/image-removebg-preview (62) 1.png',
-    'assets/images/image-removebg-preview (64) 1.png',
-    'assets/images/image-removebg-preview (65) 1.png',
-    'assets/images/image-removebg-preview (66) 1.png',
-  ];
-  List<String> productnames = [
-    'Dairy, Br...',
-    'Snack & ...',
-    'Bakery &...',
-    'Instant F...',
-    'Tea, Coff...',
-    'Fruits & ...',
-    'Cold Drin...',
-    'Meat',
-    'Baby Care',
-    'Cleaning ...',
-    'Pet Care',
-    'Atta, Ric...',
+  var data = [
+    {
+      "imagepath": 'assets/images/image-removebg-preview (53) 1.png',
+      "productnames": 'Dairy, Br...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (54) 1.png',
+      "productnames": 'Snack & ...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (52) 1.png',
+      "productnames": 'Bakery &...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (61) 1.png',
+      "productnames": 'Instant F...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (58) 1.png',
+      "productnames": 'Dairy, Br...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (58) 1.png',
+      "productnames": 'Tea, Coff...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (59) 1.png',
+      "productnames": 'Fruits & ...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (60) 1.png',
+      "productnames": 'Cold Drin...',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (62) 1.png',
+      "productnames": 'Meat',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (64) 1.png',
+      "productnames": 'Baby Care',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (65) 1.png',
+      "productnames": 'Pet Care',
+    },
+    {
+      "imagepath": 'assets/images/image-removebg-preview (66) 1.png',
+      "productnames": 'Atta, Ric...',
+    },
   ];
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -179,42 +199,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: GridView.builder(
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                itemCount: productnames.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 4,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 20,
-                  mainAxisExtent: 110,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: SizedBox(
+                height: 420,
+                child: GridView(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 20,
+                    mainAxisExtent: 100,
+                  ),
+                  children: [
+                    ...data.map((e) => Container(
+                          height: 200,
+                          width: 92,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                e["imagepath"].toString(),
+                                fit: BoxFit.cover,
+                                scale: 3,
+                              ),
+                              Text(e["productnames"].toString()),
+                            ],
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black38),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ))
+                  ],
                 ),
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: 200,
-                    width: 92,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset(
-                          imagepaths[index],
-                          fit: BoxFit.cover,
-                          scale: 3,
-                        ),
-                        Text(productnames[index]),
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black38),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  );
-                },
               ),
             ),
             SizedBox(
