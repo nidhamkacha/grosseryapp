@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/tabbarscreens/addresscreen.dart';
 
 class TabBarMainScreen extends StatefulWidget {
   const TabBarMainScreen({super.key});
@@ -42,7 +44,7 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
                           width: 10,
                         ),
                         Text(
-                          "Shop",
+                          "Profile",
                           style: GoogleFonts.inter(
                             color: Colors.white,
                             fontSize: 20,
@@ -89,47 +91,155 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
                   ],
                 ),
               ),
-              TabBar(
-                tabs: [
-                  Container(
-                    height: 62,
-                    width: 61,
-                    child: Column(
-                      children: [
-                        Stack(
-                          children: [
-                            Container(
-                              height: 42,
-                              width: 42,
-                              decoration: BoxDecoration(
-                                color: Color(0xff25A310),
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            Image.asset(
-                              'assets/images/address.png',
-                              scale: 2,
-                              fit: BoxFit.cover,
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 6,
-                        ),
-                        Text(
-                          'Address',
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                color: Color(0xff25A310),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+              SizedBox(
+                height: 5,
               ),
+              Container(
+                height: 70,
+                child: TabBar(
+                  tabs: [
+                    Container(
+                      width: 61,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 42,
+                            width: 42,
+                            child: Image.asset(
+                              'assets/images/address.png',
+                              scale: 3,
+                              // fit: BoxFit.fill,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color(0xff25A310),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            'Address',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  color: Color(0xff25A310),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 70,
+                      width: 61,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 42,
+                            width: 42,
+                            child: Image.asset(
+                              'assets/images/myorder.png',
+                              scale: 3,
+                              //fit: BoxFit.cover,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 154, 219, 143),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            'My Order',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  color: Color(0xff25A310),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 70,
+                      width: 61,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 42,
+                            width: 42,
+                            child: Image.asset(
+                              'assets/images/wallet.png',
+                              scale: 3,
+                              // fit: BoxFit.fill,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 154, 219, 143),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            'My Wallet',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  color: Color(0xff25A310),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 70,
+                      width: 61,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 42,
+                            width: 42,
+                            child: Image.asset(
+                              'assets/images/logout .png',
+                              scale: 3,
+                              // fit: BoxFit.fill,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 154, 219, 143),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            'Logout',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                  color: Color(0xff25A310),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: TabBarView(children: [
+                  AddressScreen(),
+                  AddressScreen(),
+                  AddressScreen(),
+                  AddressScreen(),
+                ]),
+              )
             ],
           ),
         ));

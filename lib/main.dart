@@ -8,6 +8,7 @@ import 'package:grosseryapp/pages/shopscreen.dart';
 import 'package:grosseryapp/pages/signinscreen.dart';
 import 'package:grosseryapp/pages/storescreen.dart';
 import 'package:grosseryapp/pages/varificationscreen.dart';
+import 'package:grosseryapp/tabbarscreens/addresscreen.dart';
 import 'package:grosseryapp/tabbarscreens/tabbarmain.dart';
 
 void main() {
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
       // home: const ShopScreen(),
       // home: const DeliveryScreen(),
       home: const TabBarMainScreen(),
+      // home: const AddressScreen(),
 
       // home: const StoreScreen(),
       // home: const HomeScreen(),
