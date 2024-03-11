@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/tabbarscreens/addresscreen.dart';
 
@@ -19,7 +20,7 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
           body: Column(
             children: [
               Container(
-                height: 156,
+                height: 150.h,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
                   Color(0xff971DE2),
@@ -28,61 +29,61 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 43,
+                      height: 38.h,
                     ),
                     Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 30.0),
                           child: Icon(
-                            size: 30,
+                            size: 30.sp,
                             Icons.arrow_back,
                             color: Colors.white,
                           ),
                         ),
                         SizedBox(
-                          width: 10,
+                          width: 10.w,
                         ),
                         Text(
                           "Profile",
                           style: GoogleFonts.inter(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         SizedBox(
-                          width: 140,
+                          width: 110.w,
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         Container(
-                          height: 50,
-                          width: 50,
+                          height: 50.h,
+                          width: 50.w,
                           decoration: BoxDecoration(
                             color: Colors.black38,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.shopping_cart_outlined,
-                            size: 30,
+                            size: 30.sp,
                             color: Colors.white,
                           ),
                         ),
                         SizedBox(
-                          width: 10,
+                          width: 10.w,
                         ),
                         Container(
-                          height: 50,
-                          width: 50,
+                          height: 50.h,
+                          width: 50.w,
                           decoration: BoxDecoration(
                             color: Colors.black38,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.menu,
-                            size: 30,
+                            size: 30.sp,
                             color: Colors.white,
                           ),
                         ),
@@ -92,7 +93,7 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 5.h,
               ),
               Container(
                 height: 70,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateAccoutScreen extends StatefulWidget {
@@ -19,24 +20,24 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 106,
+              height: 96.h,
             ),
             Text(
               "Create Accout",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
-                fontSize: 20,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w500,
               ),
             ),
             SizedBox(
-              height: 16,
+              height: 16.h,
             ),
             Text(
               "Fill your information below or register",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -44,7 +45,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
               "With your social account",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -58,16 +59,16 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                     child: Text(
                       "Name",
                       style: GoogleFonts.inter(
-                          fontSize: 16, fontWeight: FontWeight.w700),
+                          fontSize: 16.sp, fontWeight: FontWeight.w700),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      height: 42,
+                      height: 42.h,
                       child: TextField(
                         style: GoogleFonts.poppins(
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: Color(0XFF78A408),
                             fontWeight: FontWeight.w500),
                         // controller: _name,
@@ -80,7 +81,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                               borderRadius: BorderRadius.circular(15)),
                           hintStyle: GoogleFonts.poppins(
                               color: Colors.black45,
-                              fontSize: 17,
+                              fontSize: 17.sp,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -91,16 +92,16 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                     child: Text(
                       "Email",
                       style: GoogleFonts.inter(
-                          fontSize: 16, fontWeight: FontWeight.w700),
+                          fontSize: 16.sp, fontWeight: FontWeight.w700),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      height: 42,
+                      height: 42.sp,
                       child: TextField(
                         style: GoogleFonts.poppins(
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: Color(0XFF78A408),
                             fontWeight: FontWeight.w500),
                         // controller: _name,
@@ -113,7 +114,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                               borderRadius: BorderRadius.circular(15)),
                           hintStyle: GoogleFonts.poppins(
                               color: Colors.black45,
-                              fontSize: 17,
+                              fontSize: 17.sp,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -126,14 +127,14 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                       child: Text(
                         "Password",
                         style: GoogleFonts.inter(
-                            fontSize: 16, fontWeight: FontWeight.w700),
+                            fontSize: 16.sp, fontWeight: FontWeight.w700),
                       ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      height: 42,
+                      height: 42.h,
                       child: TextField(
                         obscureText: passwordVisible,
                         enableSuggestions: false,
@@ -164,14 +165,14 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                               borderRadius: BorderRadius.circular(15)),
                           hintStyle: GoogleFonts.poppins(
                               color: Colors.black45,
-                              fontSize: 17,
+                              fontSize: 17.sp,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 5.h,
                   ),
                   Row(
                     children: [
@@ -188,16 +189,16 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                       Text(
                         'Agree with Term & Condition',
                         style: GoogleFonts.inter(
-                            fontSize: 14, fontWeight: FontWeight.w400),
+                            fontSize: 14.sp, fontWeight: FontWeight.w400),
                         overflow: TextOverflow.ellipsis,
                       )
                     ],
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 20.h,
                   ),
                   SizedBox(
-                    height: 42,
+                    height: 42.h,
                     width: double.infinity,
                     child: ElevatedButton(
                         onPressed: () {},
@@ -209,7 +210,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                           "SIGN IN",
                           style: GoogleFonts.inter(
                               color: Colors.white,
-                              fontSize: 18,
+                              fontSize: 18.sp,
                               fontWeight: FontWeight.w500),
                         )),
                   ),
@@ -217,33 +218,33 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
               ),
             ),
             SizedBox(
-              height: 36,
+              height: 30.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 1,
-                  width: 111,
+                  height: 1.h,
+                  width: 111.w,
                   color: Colors.black38,
                 ),
                 Text("Or sign in with"),
                 Container(
-                  height: 1,
-                  width: 111,
+                  height: 1.h,
+                  width: 111.w,
                   color: Colors.black38,
                 ),
               ],
             ),
             SizedBox(
-              height: 52,
+              height: 40.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
-                    width: 42.0,
-                    height: 42.0,
+                    width: 42.w,
+                    height: 42.h,
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.black38),
@@ -253,8 +254,8 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                                 "assets/images/apple-logo (1) 1.png"),
                             scale: 3))),
                 Container(
-                    width: 42.0,
-                    height: 42.0,
+                    width: 42.w,
+                    height: 42.h,
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.black38),
@@ -264,8 +265,8 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                                 "assets/images/search (1) 1.png"),
                             scale: 3))),
                 Container(
-                    width: 42.0,
-                    height: 42.0,
+                    width: 42.w,
+                    height: 42.h,
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.all(color: Colors.black38),
@@ -277,7 +278,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
               ],
             ),
             SizedBox(
-              height: 38,
+              height: 30.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -286,11 +287,11 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                   "Already have an account? ",
                   style: GoogleFonts.inter(
                       color: Colors.black,
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400),
                 ),
                 SizedBox(
-                  width: 10,
+                  width: 10.w,
                 ),
                 InkWell(
                   onTap: () {},

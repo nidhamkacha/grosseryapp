@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:input_quantity/input_quantity.dart';
 
@@ -51,7 +52,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
       body: Column(
         children: [
           Container(
-            height: 156,
+            height: 140.h,
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
               Color(0xff971DE2),
@@ -60,20 +61,20 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 43,
+                  height: 43.h,
                 ),
                 Row(
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0),
                       child: Icon(
-                        size: 30,
+                        size: 30.sp,
                         Icons.arrow_back,
                         color: Colors.white,
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 10.w,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,52 +83,52 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                           "Delivery in 10 minutes",
                           style: GoogleFonts.inter(
                             color: Colors.white,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         SizedBox(
-                          height: 7,
+                          height: 7.h,
                         ),
                         Text(
                           "3 items",
                           style: GoogleFonts.inter(
                             color: Colors.white,
-                            fontSize: 10,
+                            fontSize: 10.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],
                     ),
                     SizedBox(
-                      width: 60,
+                      width: 22.w,
                     ),
                     Container(
-                      height: 50,
-                      width: 50,
+                      height: 50.h,
+                      width: 50.w,
                       decoration: BoxDecoration(
                         color: Colors.black38,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.shopping_cart_outlined,
-                        size: 30,
+                        size: 30.sp,
                         color: Colors.white,
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 10.w,
                     ),
                     Container(
-                      height: 50,
-                      width: 50,
+                      height: 50.h,
+                      width: 50.w,
                       decoration: BoxDecoration(
                         color: Colors.black38,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.menu,
-                        size: 30,
+                        size: 30.sp,
                         color: Colors.white,
                       ),
                     ),
@@ -146,15 +147,15 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        height: 120,
-                        width: 100,
+                        height: 120.h,
+                        width: 100.w,
                         child: Image.asset(
                           data[index]["imagepath"].toString(),
                           scale: 2,
                         ),
                       ),
                       SizedBox(
-                        width: 8,
+                        width: 8.w,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,29 +164,29 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                             data[index]["Category"].toString(),
                             style: GoogleFonts.inter(
                               color: Colors.black45,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Text(
                             data[index]["productname"].toString(),
                             style: GoogleFonts.inter(
                               color: Colors.black,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           SizedBox(
-                            height: 4,
+                            height: 4.h,
                           ),
                           Text(
                             data[index]["price"].toString(),
                             style: GoogleFonts.inter(
                               color: Colors.black45,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -219,13 +220,10 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
             },
             itemCount: data.length,
           ),
-          SizedBox(
-            height: 60,
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22.0),
             child: SizedBox(
-              height: 48,
+              height: 48.h,
               width: double.infinity,
               child: ElevatedButton(
                 style: ButtonStyle(
@@ -244,7 +242,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
-                    fontSize: 14,
+                    fontSize: 14.sp,
                   ),
                 ),
               ),

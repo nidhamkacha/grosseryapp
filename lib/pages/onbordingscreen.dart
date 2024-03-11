@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnbodingScreen extends StatefulWidget {
@@ -16,13 +17,13 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 150,
+            height: 150.h,
           ),
           Text(
             "Select from Our",
             style: GoogleFonts.inter(
               color: Color(0xff188806),
-              fontSize: 20,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -30,18 +31,18 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
             "Best Menu",
             style: GoogleFonts.inter(
               color: Color(0xff188806),
-              fontSize: 20,
+              fontSize: 20.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
           SizedBox(
-            height: 14,
+            height: 14.h,
           ),
           Text(
             "Pick your food from our menu",
             style: GoogleFonts.inter(
               color: Color(0xff000000),
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -49,41 +50,41 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
             "More than 35 items.",
             style: GoogleFonts.inter(
               color: Color(0xff000000),
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
           ),
           SizedBox(
-            height: 14,
+            height: 14.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 24,
-                height: 5,
+                width: 24.w,
+                height: 5.h,
                 decoration: BoxDecoration(
                   color: Color(0xff188806),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
               SizedBox(
-                width: 4,
+                width: 4.w,
               ),
               Container(
-                width: 12,
-                height: 5,
+                width: 12.w,
+                height: 5.h,
                 decoration: BoxDecoration(
                   color: Color(0xff188806),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
               SizedBox(
-                width: 4,
+                width: 4.w,
               ),
               Container(
-                width: 12,
-                height: 5,
+                width: 12.w,
+                height: 5.h,
                 decoration: BoxDecoration(
                   color: Color(0xff188806),
                   borderRadius: BorderRadius.circular(10),
@@ -92,17 +93,17 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
             ],
           ),
           SizedBox(
-            height: 40,
+            height: 40.h,
           ),
           Container(
-            height: 288,
+            height: 288.h,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
                         'assets/images/Online Groceries-cuate 1.png'))),
           ),
           SizedBox(
-            height: 155,
+            height: 125.h,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 25, right: 25),
@@ -113,13 +114,13 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                   "Skip",
                   style: GoogleFonts.inter(
                     color: Color(0xff000000),
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
                 SizedBox(
-                  height: 44,
-                  width: 90,
+                  height: 44.h,
+                  width: 90.w,
                   child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
@@ -131,7 +132,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                         'Next',
                         style: GoogleFonts.inter(
                           color: Colors.white,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       )),

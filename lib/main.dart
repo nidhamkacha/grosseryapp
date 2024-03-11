@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/pages/createaccount.dart';
 import 'package:grosseryapp/pages/deliveryscreen.dart';
 import 'package:grosseryapp/pages/homescreen.dart';
@@ -20,26 +21,32 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      // home: const LoadingScreen(),
-      // home: const OnbodingScreen(),
-      // home: const SigninScreen(),
-      // home: const CreateAccoutScreen(),
-      // home: const VarificationScreen(),
-      // home: const HomeScreen(),
-      // home: const ShopScreen(),
-      // home: const DeliveryScreen(),
-      home: const TabBarMainScreen(),
-      // home: const AddressScreen(),
+    return ScreenUtilInit(
+        designSize: const Size(360, 800),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            // home: const LoadingScreen(),
+            // home: const OnbodingScreen(),
+            // home: const SigninScreen(),
+            // home: const CreateAccoutScreen(),
+            // home: const VarificationScreen(),
+            // home: const HomeScreen(),
+            // home: const ShopScreen(),
+            // home: const DeliveryScreen(),
+            home: const TabBarMainScreen(),
+            // home: const AddressScreen(),
 
-      // home: const StoreScreen(),
-      // home: const HomeScreen(),
-    );
+            // home: const StoreScreen(),
+            // home: const HomeScreen(),
+          );
+        });
   }
 }

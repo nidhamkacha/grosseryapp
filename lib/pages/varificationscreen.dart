@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VarificationScreen extends StatefulWidget {
@@ -17,24 +16,24 @@ class _VarificationScreenState extends State<VarificationScreen> {
       body: Column(
         children: [
           SizedBox(
-            height: 140,
+            height: 140.h,
           ),
           Text(
             "Verify Code",
             style: GoogleFonts.inter(
               color: Color(0xff000000),
-              fontSize: 22,
+              fontSize: 22.sp,
               fontWeight: FontWeight.w700,
             ),
           ),
           SizedBox(
-            height: 24,
+            height: 24.h,
           ),
           Text(
             "Please enter the code we just sent to email",
             style: GoogleFonts.inter(
               color: Color(0xff000000),
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -42,7 +41,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
             "example@gmail.com",
             style: GoogleFonts.inter(
               color: Color(0xff188806),
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -50,7 +49,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 90,
+                height: 90.h,
                 padding: EdgeInsets.all(16.0),
                 child: ListView.builder(
                     shrinkWrap: true,
@@ -61,7 +60,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           // height: 40,
-                          width: 47,
+                          width: 47.w,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Color.fromARGB(255, 196, 243, 189),
@@ -76,7 +75,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
             "Didn’t receive OTP?",
             style: GoogleFonts.inter(
               color: Colors.black38,
-              fontSize: 14,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -84,18 +83,18 @@ class _VarificationScreenState extends State<VarificationScreen> {
             "Resend Code",
             style: GoogleFonts.inter(
               color: Colors.black,
-              fontSize: 14,
+              fontSize: 14.sp,
               decoration: TextDecoration.underline,
               fontWeight: FontWeight.w500,
             ),
           ),
           SizedBox(
-            height: 37,
+            height: 37.h,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SizedBox(
-              height: 45,
+              height: 45.h,
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: () {},
@@ -107,7 +106,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
                     "Verify",
                     style: GoogleFonts.inter(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500),
                   )),
             ),

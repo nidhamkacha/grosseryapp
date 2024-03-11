@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Container(
-              height: 156,
+              height: 156.h,
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Color(0xff971DE2),
@@ -76,20 +77,20 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 35,
+                    height: 35.h,
                   ),
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 30.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         child: Icon(
-                          size: 30,
+                          size: 30.sp,
                           Icons.schedule,
                           color: Colors.white,
                         ),
                       ),
                       SizedBox(
-                        width: 10,
+                        width: 10.w,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             "Delivery in 15 minutes",
                             style: GoogleFonts.inter(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -106,54 +107,54 @@ class _HomeScreenState extends State<HomeScreen> {
                             "H.No. 2834 Street, 784 Sector, Lud...",
                             style: GoogleFonts.inter(
                               color: Colors.white,
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w300,
                             ),
                           ),
                         ],
                       ),
                       SizedBox(
-                        width: 10,
+                        width: 10.w,
                       ),
                       Container(
-                        height: 50,
-                        width: 50,
+                        height: 40.h,
+                        width: 40.w,
                         decoration: BoxDecoration(
                           color: Colors.black38,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.shopping_cart_outlined,
-                          size: 30,
+                          size: 25.sp,
                           color: Colors.white,
                         ),
                       ),
                       SizedBox(
-                        width: 10,
+                        width: 5.w,
                       ),
                       Container(
-                        height: 50,
-                        width: 50,
+                        height: 40.h,
+                        width: 40.w,
                         decoration: BoxDecoration(
                           color: Colors.black38,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.menu,
-                          size: 30,
+                          size: 25.sp,
                           color: Colors.white,
                         ),
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: 18,
+                    height: 18.h,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
                       color: Colors.white,
-                      height: 42,
+                      height: 42.h,
                       child: TextField(
                         decoration: InputDecoration(
                           labelText: 'Search for atta, dal, coke and more',
@@ -167,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 20.h,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -177,23 +178,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     "Shop Popular Categories",
                     style: GoogleFonts.inter(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 68.w,
                   ),
                   Text(
                     "View All",
                     style: GoogleFonts.inter(
                       color: Color(0xff1C0D56),
-                      fontSize: 16,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   SizedBox(
-                    width: 2,
+                    width: 2.w,
                   ),
                   Icon(Icons.arrow_forward_ios)
                 ],
@@ -202,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: SizedBox(
-                height: 420,
+                height: 420.h,
                 child: GridView(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
@@ -212,8 +213,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   children: [
                     ...data.map((e) => Container(
-                          height: 200,
-                          width: 92,
+                          height: 200.h,
+                          width: 92.w,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -234,14 +235,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            
             SizedBox(
-              height: 36,
+              height: 36.h,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Container(
-                height: 129,
+                height: 129.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: Color.fromARGB(255, 243, 219, 101),
@@ -260,18 +260,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 "Fresh",
                                 style: GoogleFonts.inter(
                                   color: Colors.black,
-                                  fontSize: 18,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                               SizedBox(
-                                width: 5,
+                                width: 5.w,
                               ),
                               Text(
                                 "Fruits",
                                 style: GoogleFonts.inter(
                                   color: Colors.black,
-                                  fontSize: 18,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
@@ -281,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             "Get Upto  30% Off",
                             style: GoogleFonts.inter(
                               color: Colors.black,
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -300,13 +300,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   "Order Now",
                                   style: GoogleFonts.inter(
                                     color: Colors.white,
-                                    fontSize: 12,
+                                    fontSize: 12.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
                                 Icon(
                                   Icons.arrow_forward_rounded,
-                                  size: 18,
+                                  size: 18.sp,
                                   color: Colors.white,
                                 ),
                               ],
@@ -321,10 +321,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 28,
+              height: 28.h,
             ),
             Container(
-              height: 60,
+              height: 60.h,
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -338,14 +338,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Icon(
                           Icons.home_outlined,
-                          size: 25,
+                          size: 25.sp,
                           color: Colors.green,
                         ),
                         Text(
                           "Home",
                           style: GoogleFonts.inter(
                             color: Color(0xff188806),
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -361,14 +361,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Icon(
                           Icons.storefront_sharp,
-                          size: 25,
+                          size: 25.sp,
                           color: Colors.black,
                         ),
                         Text(
                           "Shop",
                           style: GoogleFonts.inter(
                             color: Colors.black,
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -384,14 +384,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Icon(
                           Icons.location_on_outlined,
-                          size: 25,
+                          size: 25.sp,
                           color: Colors.black,
                         ),
                         Text(
                           "Stores",
                           style: GoogleFonts.inter(
                             color: Colors.black,
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -407,14 +407,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Icon(
                           Icons.shopping_basket_outlined,
-                          size: 25,
+                          size: 25.sp,
                           color: Colors.black,
                         ),
                         Text(
                           "Cart",
                           style: GoogleFonts.inter(
                             color: Colors.black,
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -430,14 +430,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Icon(
                           Icons.person_outline_outlined,
-                          size: 25,
+                          size: 25.sp,
                           color: Colors.black,
                         ),
                         Text(
                           "Profile",
                           style: GoogleFonts.inter(
                             color: Colors.black,
-                            fontSize: 12,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
