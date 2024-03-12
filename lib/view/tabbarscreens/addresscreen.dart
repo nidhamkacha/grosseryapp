@@ -109,33 +109,66 @@ class _AddressScreenState extends State<AddressScreen> {
                         size: 30.sp,
                       ),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(e["title"].toString()),
                           Text(e["subtitle"].toString()),
                         ],
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                      Spacer(),
+                      TextButton.icon(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                        ),
+                        onPressed: () {},
+                        icon: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/edit.png',
+                              scale: 2,
                             ),
-                            onPressed: () => {},
-                            child: Column(
-                              // Replace with a Row for horizontal icon + text
-                              children: <Widget>[
-                                Image.asset(
-                                  'assets/images/edit.png',
-                                  scale: 3,
-                                  // fit: BoxFit.fill,
-                                ),
-                                Text("Edit"),
-                              ],
+                            SizedBox(
+                                height: 7
+                                    .h), // Adjust the spacing between the image and text as needed
+                            Text(
+                              'Edit',
+                              style: TextStyle(
+                                color: Color(0xff188806),
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        label: Text(''), // Empty label
+                      ),
+                      Spacer(),
+                      TextButton.icon(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                        ),
+                        onPressed: () {},
+                        icon: Column(
+                          children: [
+                            Image.asset(
+                              'assets/images/delete.png',
+                              scale: 2,
+                            ),
+                            SizedBox(
+                                height:
+                                    7), // Adjust the spacing between the image and text as needed
+                            Text(
+                              'Edit',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        label: Text(''), // Empty label
                       ),
                     ],
                   ),

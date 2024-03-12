@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               child: SizedBox(
                 height: 420.h,
                 child: GridView(
@@ -234,9 +234,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 36.h,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -321,7 +318,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 28.h,
+              height: 10.h,
             ),
             Container(
               height: 60.h,
@@ -331,7 +328,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   TextButton(
                     onPressed: () {
-                      // Respond to button press
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('You Are At HomeScreen'),
+                          content: const Text('Select Another Tab'),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: const Text('Cancel'),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

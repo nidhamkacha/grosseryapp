@@ -1,48 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/view/auth/createaccount.dart';
+import 'package:grosseryapp/view/auth/varificationscreen.dart';
 
-class CreateAccoutScreen extends StatefulWidget {
-  const CreateAccoutScreen({super.key});
+class SigninScreen extends StatefulWidget {
+  const SigninScreen({super.key});
 
   @override
-  State<CreateAccoutScreen> createState() => _CreateAccoutScreenState();
+  State<SigninScreen> createState() => _SigninScreenState();
 }
 
-class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   bool passwordVisible = false;
-  bool agree = false;
-
   @override
+  void initState() {
+    super.initState();
+    passwordVisible = true;
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: 96.h,
+              height: 125.h,
             ),
             Text(
-              "Create Accout",
+              "Sign In",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
-              height: 16.h,
-            ),
             Text(
-              "Fill your information below or register",
-              style: GoogleFonts.inter(
-                color: Color(0xff000000),
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            Text(
-              "With your social account",
+              "Hi! Welcome back, you’ve been missed",
               style: GoogleFonts.inter(
                 color: Color(0xff000000),
                 fontSize: 14.sp,
@@ -57,39 +52,6 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Name",
-                      style: GoogleFonts.inter(
-                          fontSize: 16.sp, fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 42.h,
-                      child: TextField(
-                        style: GoogleFonts.poppins(
-                            fontSize: 14.sp,
-                            color: Color(0XFF78A408),
-                            fontWeight: FontWeight.w500),
-                        // controller: _name,
-                        cursorColor: Colors.amber,
-                        decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0XFF78A408)),
-                              borderRadius: BorderRadius.circular(15)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          hintStyle: GoogleFonts.poppins(
-                              color: Colors.black45,
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
                       "Email",
                       style: GoogleFonts.inter(
                           fontSize: 16.sp, fontWeight: FontWeight.w700),
@@ -98,7 +60,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
-                      height: 42.sp,
+                      height: 42.h,
                       child: TextField(
                         style: GoogleFonts.poppins(
                             fontSize: 14.sp,
@@ -140,7 +102,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                         enableSuggestions: false,
                         autocorrect: false,
                         style: GoogleFonts.poppins(
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             color: Color(0XFF78A408),
                             fontWeight: FontWeight.w500),
                         // controller: _name,
@@ -172,36 +134,34 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 5.h,
+                    height: 11.h,
                   ),
-                  Row(
-                    children: [
-                      Material(
-                        child: Checkbox(
-                          value: agree,
-                          onChanged: (value) {
-                            setState(() {
-                              agree = value ?? false;
-                            });
-                          },
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: InkWell(
+                      onTap: () {},
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline,
                         ),
                       ),
-                      Text(
-                        'Agree with Term & Condition',
-                        style: GoogleFonts.inter(
-                            fontSize: 14.sp, fontWeight: FontWeight.w400),
-                        overflow: TextOverflow.ellipsis,
-                      )
-                    ],
+                    ),
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 36.h,
                   ),
                   SizedBox(
                     height: 42.h,
                     width: double.infinity,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => VarificationScreen()));
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0XFF188806),
                             shape: RoundedRectangleBorder(
@@ -218,7 +178,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
               ),
             ),
             SizedBox(
-              height: 30.h,
+              height: 36.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -226,18 +186,18 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                 Container(
                   height: 1.h,
                   width: 111.w,
-                  color: Colors.black38,
+                  color: Colors.black,
                 ),
                 Text("Or sign in with"),
                 Container(
                   height: 1.h,
                   width: 111.w,
-                  color: Colors.black38,
+                  color: Colors.black,
                 ),
               ],
             ),
             SizedBox(
-              height: 40.h,
+              height: 52.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -278,13 +238,13 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
               ],
             ),
             SizedBox(
-              height: 30.h,
+              height: 38.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Already have an account? ",
+                  "Don't have an account?",
                   style: GoogleFonts.inter(
                       color: Colors.black,
                       fontSize: 14.sp,
@@ -294,9 +254,14 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                   width: 10.w,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateAccoutScreen()));
+                  },
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
                       color: Colors.blue,
                       decoration: TextDecoration.underline,

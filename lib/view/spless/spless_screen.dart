@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grosseryapp/view/onbording/onbordingscreen.dart';
 
-class LoadingScreen extends StatefulWidget {
-  const LoadingScreen({super.key});
+class SplessScreen extends StatefulWidget {
+  const SplessScreen({super.key});
 
   @override
-  State<LoadingScreen> createState() => _LoadingScreenState();
+  State<SplessScreen> createState() => _SplessScreenState();
 }
 
-class _LoadingScreenState extends State<LoadingScreen> {
+class _SplessScreenState extends State<SplessScreen> {
   @override
+  void initState() {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => OnbodingScreen()));
+    });
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff188806),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/view/auth/signinscreen.dart';
 
 class OnbodingScreen extends StatefulWidget {
   const OnbodingScreen({super.key});
@@ -122,7 +123,13 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                   height: 44.h,
                   width: 90.w,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SigninScreen(),
+                            ));
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xff188806),
                         shape: RoundedRectangleBorder(

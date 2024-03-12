@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/view/home/homescreen.dart';
 
 class VarificationScreen extends StatefulWidget {
   const VarificationScreen({super.key});
@@ -97,7 +98,10 @@ class _VarificationScreenState extends State<VarificationScreen> {
               height: 45.h,
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0XFF188806),
                       shape: RoundedRectangleBorder(
