@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/view/tabbarscreens/addresscreen.dart';
+import 'package:grosseryapp/view/tabbarscreens/myorderscreen.dart';
 
-class TabBarMainScreen extends StatefulWidget {
-  const TabBarMainScreen({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<TabBarMainScreen> createState() => _TabBarMainScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _TabBarMainScreenState extends State<TabBarMainScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -98,6 +98,10 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
               Container(
                 height: 70,
                 child: TabBar(
+                  // indicator: BoxDecoration(
+                  //   borderRadius: BorderRadius.circular(10), // Adjust as needed
+                  //   color: Colors.green, // Indicator color
+                  // ),
                   tabs: [
                     Container(
                       width: 61,
@@ -236,7 +240,7 @@ class _TabBarMainScreenState extends State<TabBarMainScreen> {
               Expanded(
                 child: TabBarView(children: [
                   AddressScreen(),
-                  AddressScreen(),
+                  MyOrderScreen(),
                   AddressScreen(),
                   AddressScreen(),
                 ]),

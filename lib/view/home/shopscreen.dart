@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/view/home/homescreen.dart';
 
 class ShopScreen extends StatefulWidget {
   const ShopScreen({super.key});
@@ -236,7 +237,8 @@ class _ShopScreenState extends State<ShopScreen> {
               children: [
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

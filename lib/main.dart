@@ -10,7 +10,7 @@ import 'package:grosseryapp/view/home/storescreen.dart';
 import 'package:grosseryapp/view/auth/varificationscreen.dart';
 import 'package:grosseryapp/view/spless/spless_screen.dart';
 import 'package:grosseryapp/view/tabbarscreens/addresscreen.dart';
-import 'package:grosseryapp/view/tabbarscreens/tabbarmain.dart';
+import 'package:grosseryapp/view/tabbarscreens/profilescreen.dart';
 
 void main() {
   runApp(const MyApp());

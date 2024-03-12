@@ -43,7 +43,7 @@ class _CartScreenState extends State<CartScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Shop",
+                          "Cart",
                           style: GoogleFonts.inter(
                             color: Colors.white,
                             fontSize: 20,
@@ -100,6 +100,11 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
+          Center(
+            child: Container(
+              child: Text("This is Cart Screen"),
+            ),
+          )
         ],
       ),
     );
