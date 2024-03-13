@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(360, 800),
+        // designSize: const Size(370, 800),
+        designSize: const Size(380, 800), //my samsumg mobile
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/tabbarscreens/addresscreen.dart';
+import 'package:grosseryapp/view/tabbarscreens/logoutscreen.dart';
 import 'package:grosseryapp/view/tabbarscreens/myorderscreen.dart';
 import 'package:grosseryapp/view/tabbarscreens/mywalletscreen.dart';
 
@@ -244,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   AddressScreen(),
                   MyOrderScreen(),
                   MywalletScreen(),
-                  AddressScreen(),
+                  LogoutScreen(),
                 ]),
               )
             ],

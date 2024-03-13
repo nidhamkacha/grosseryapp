@@ -16,22 +16,22 @@ class _MywalletScreenState extends State<MywalletScreen> {
       "icon": Icons.add_circle_outline_rounded,
       "status": "Cashback",
       "tid": "Transaction ID: 50916228",
-      "price": "₹ 930",
-      "subtitle": "Placed on wed, 19 Oct 30, 12:55 pm",
+      "price": "₹ 500",
+      "subtitle": "On 23 Oct 18, 03:13 PM",
     },
     {
       "icon": Icons.remove_circle_outline_rounded,
       "status": "Purchase",
-      "price": "₹ 580",
+      "price": "₹ 300",
       "tid": "Transaction ID: 50916984",
-      "subtitle": "Placed on wed, 22 Oct 27, 01:55 pm",
+      "subtitle": "On 23 Oct 18, 03:13 PM",
     },
     {
-      "icon": Icons.shopping_bag_outlined,
+      "icon": Icons.add_circle_outline_rounded,
       "status": "Cashback",
-      "tid": "Transaction ID: 509165488",
-      "price": "₹ 1080",
-      "subtitle": "Placed on wed, 22 Oct 27, 01:55 pm",
+      "tid": "Transaction ID:509165488",
+      "price": "₹ 800",
+      "subtitle": "On 13 Oct 16, 01:43 PM",
     },
   ];
   @override
@@ -56,7 +56,7 @@ class _MywalletScreenState extends State<MywalletScreen> {
             ),
           ),
           ListView(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(5),
             shrinkWrap: true,
             children: [
               SizedBox(
@@ -64,7 +64,7 @@ class _MywalletScreenState extends State<MywalletScreen> {
               ),
               ...items.map(
                 (e) => Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(5.0),
                   child: Container(
                     height: 80.h,
                     width: double.infinity,
@@ -90,24 +90,18 @@ class _MywalletScreenState extends State<MywalletScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Color.fromARGB(255, 175, 235, 164),
-                              ),
-                              child: Text(
-                                e["status"].toString(),
-                                style: TextStyle(
-                                  color: AppColors.greencolor,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                            Text(
+                              e["status"].toString(),
+                              style: TextStyle(
+                                color: Color(0xff25A310),
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                             Row(
                               children: [
                                 Text(
-                                  e["orderid"].toString(),
+                                  e["tid"].toString(),
                                   style: TextStyle(
                                     color: AppColors.blackcolor,
                                     fontSize: 14.sp,

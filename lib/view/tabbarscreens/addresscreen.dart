@@ -210,7 +210,7 @@ class _AddressScreenState extends State<AddressScreen> {
             ],
           ),
           SizedBox(
-            height: 180.h,
+            height: 175.h,
           ),
           Container(
             height: 60.h,
