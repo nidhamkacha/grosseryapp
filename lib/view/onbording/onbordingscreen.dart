@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/auth/signinscreen.dart';
 
 class OnbodingScreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
           Text(
             "Select from Our",
             style: GoogleFonts.inter(
-              color: Color(0xff188806),
+              color: AppColors.greencolor,
               fontSize: 20.sp,
               fontWeight: FontWeight.w500,
             ),
@@ -31,7 +32,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
           Text(
             "Best Menu",
             style: GoogleFonts.inter(
-              color: Color(0xff188806),
+              color: AppColors.greencolor,
               fontSize: 20.sp,
               fontWeight: FontWeight.w500,
             ),
@@ -42,7 +43,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
           Text(
             "Pick your food from our menu",
             style: GoogleFonts.inter(
-              color: Color(0xff000000),
+              color: AppColors.blackcolor,
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -50,7 +51,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
           Text(
             "More than 35 items.",
             style: GoogleFonts.inter(
-              color: Color(0xff000000),
+              color: AppColors.blackcolor,
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -65,7 +66,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                 width: 24.w,
                 height: 5.h,
                 decoration: BoxDecoration(
-                  color: Color(0xff188806),
+                  color: AppColors.greencolor,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -76,7 +77,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                 width: 12.w,
                 height: 5.h,
                 decoration: BoxDecoration(
-                  color: Color(0xff188806),
+                  color: AppColors.greencolor,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -87,7 +88,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                 width: 12.w,
                 height: 5.h,
                 decoration: BoxDecoration(
-                  color: Color(0xff188806),
+                  color: AppColors.greencolor,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -114,7 +115,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                 Text(
                   "Skip",
                   style: GoogleFonts.inter(
-                    color: Color(0xff000000),
+                    color: AppColors.blackcolor,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -131,14 +132,14 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                             ));
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff188806),
+                        backgroundColor: AppColors.greencolor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                       ),
                       child: Text(
                         'Next',
                         style: GoogleFonts.inter(
-                          color: Colors.white,
+                          color: AppColors.whitecolor,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),

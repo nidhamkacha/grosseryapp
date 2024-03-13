@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/onbording/onbordingscreen.dart';
 
 class SplessScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SplessScreenState extends State<SplessScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff188806),
+      backgroundColor: AppColors.greencolor,
       body: Center(
         child: Container(
           height: 62.h,

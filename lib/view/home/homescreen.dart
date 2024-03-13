@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/cartscreen.dart';
 import 'package:grosseryapp/view/home/shopscreen.dart';
 import 'package:grosseryapp/view/home/storescreen.dart';
@@ -90,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Icon(
                           size: 30.sp,
                           Icons.schedule,
-                          color: Colors.white,
+                          color: AppColors.whitecolor,
                         ),
                       ),
                       SizedBox(
@@ -102,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "Delivery in 15 minutes",
                             style: GoogleFonts.inter(
-                              color: Colors.white,
+                              color: AppColors.whitecolor,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500,
                             ),
@@ -110,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "H.No. 2834 Street, 784 Sector, Lud...",
                             style: GoogleFonts.inter(
-                              color: Colors.white,
+                              color: AppColors.whitecolor,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w300,
                             ),
@@ -130,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Icon(
                           Icons.shopping_cart_outlined,
                           size: 25.sp,
-                          color: Colors.white,
+                          color: AppColors.whitecolor,
                         ),
                       ),
                       SizedBox(
@@ -146,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Icon(
                           Icons.menu,
                           size: 25.sp,
-                          color: Colors.white,
+                          color: AppColors.whitecolor,
                         ),
                       ),
                     ],
@@ -157,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
-                      color: Colors.white,
+                      color: AppColors.whitecolor,
                       height: 42.h,
                       child: TextField(
                         decoration: InputDecoration(
@@ -292,7 +293,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Color(0xff188806)),
+                                  AppColors.greencolor),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -300,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Text(
                                   "Order Now",
                                   style: GoogleFonts.inter(
-                                    color: Colors.white,
+                                    color: AppColors.whitecolor,
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -308,7 +309,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Icon(
                                   Icons.arrow_forward_rounded,
                                   size: 18.sp,
-                                  color: Colors.white,
+                                  color: AppColors.whitecolor,
                                 ),
                               ],
                             ),
@@ -361,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           "Home",
                           style: GoogleFonts.inter(
-                            color: Color(0xff188806),
+                            color: AppColors.greencolor,
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w400,
                           ),

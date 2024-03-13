@@ -1,8 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
+import 'package:grosseryapp/view/home/cartscreen.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
+import 'package:grosseryapp/view/home/storescreen.dart';
+import 'package:grosseryapp/view/tabbarscreens/profilescreen.dart';
 
 class ShopScreen extends StatefulWidget {
   const ShopScreen({super.key});
@@ -13,6 +18,34 @@ class ShopScreen extends StatefulWidget {
 
 class _ShopScreenState extends State<ShopScreen> {
   var data = [
+    {
+      "imagepath": 'assets/images/Bittersweet Chocolate.png',
+      "categories": 'Chocolate',
+      "price": '₹ 120',
+      "productname": 'Bittersweet Chocolate',
+      "quantity": '2*90g'
+    },
+    {
+      "imagepath": 'assets/images/eggbox.png',
+      "categories": 'Egg',
+      "price": '₹ 80',
+      "productname": 'Egg box',
+      "quantity": '2*80g',
+    },
+    {
+      "imagepath": 'assets/images/vegetable butter.png',
+      "categories": 'Butter',
+      "price": '₹ 150',
+      "productname": 'Vegetable oil butter...',
+      "quantity": '2*85g',
+    },
+    {
+      "imagepath": 'assets/images/beer.png',
+      "categories": 'Beer',
+      "price": '₹ 100',
+      "productname": 'Lager beer',
+      "quantity": '1/2 lit'
+    },
     {
       "imagepath": 'assets/images/Bittersweet Chocolate.png',
       "categories": 'Chocolate',
@@ -63,10 +96,26 @@ class _ShopScreenState extends State<ShopScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0),
-                      child: Icon(
-                        size: 30.sp,
-                        Icons.arrow_back,
-                        color: Colors.white,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.black38,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: 30,
+                            color: AppColors.whitecolor,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -75,25 +124,35 @@ class _ShopScreenState extends State<ShopScreen> {
                     Text(
                       "Shop",
                       style: GoogleFonts.inter(
-                        color: Colors.white,
+                        color: AppColors.whitecolor,
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     SizedBox(
-                      width: 130.w,
+                      width: 120.w,
                     ),
-                    Container(
-                      height: 50.h,
-                      width: 50.w,
-                      decoration: BoxDecoration(
-                        color: Colors.black38,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.shopping_cart_outlined,
-                        size: 30.sp,
-                        color: Colors.white,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CartScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.black38,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.shopping_cart_outlined,
+                          size: 30,
+                          color: AppColors.whitecolor,
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -109,7 +168,7 @@ class _ShopScreenState extends State<ShopScreen> {
                       child: Icon(
                         Icons.menu,
                         size: 30.sp,
-                        color: Colors.white,
+                        color: AppColors.whitecolor,
                       ),
                     ),
                   ],
@@ -117,117 +176,119 @@ class _ShopScreenState extends State<ShopScreen> {
               ],
             ),
           ),
-          GridView(
-            shrinkWrap: true,
-            // itemCount: imagepath.length,
-            padding: EdgeInsets.zero,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisExtent: 281,
-            ),
-            children: data
-                .map((e) => Container(
-                      height: 380.h,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Column(
-                          // mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Align(
-                              alignment: Alignment.center,
-                              child: Image.asset(
-                                e["imagepath"].toString(),
-                                fit: BoxFit.cover,
-                                scale: 3,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 14.h,
-                            ),
-                            Text(
-                              e["categories"].toString(),
-                              style: GoogleFonts.inter(
-                                color: Colors.black45,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-                            Text(
-                              e["productname"].toString(),
-                              style: GoogleFonts.inter(
-                                color: Colors.black,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 4.h,
-                            ),
-                            Text(
-                              e["quantity"].toString(),
-                              style: GoogleFonts.inter(
-                                color: Colors.black45,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  e["price"].toString(),
-                                  style: GoogleFonts.inter(
-                                    color: Colors.black,
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+          Expanded(
+            child: GridView(
+              shrinkWrap: true,
+              // itemCount: imagepath.length,
+              padding: EdgeInsets.zero,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisExtent: 281,
+              ),
+              children: data
+                  .map((e) => Container(
+                        height: 380.h,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Column(
+                            // mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Align(
+                                alignment: Alignment.center,
+                                child: Image.asset(
+                                  e["imagepath"].toString(),
+                                  fit: BoxFit.cover,
+                                  scale: 3,
                                 ),
-                                // IconButton(onPressed: (){},icon: Icon(Icons.add),),
-                                TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Add',
+                              ),
+                              SizedBox(
+                                height: 14.h,
+                              ),
+                              Text(
+                                e["categories"].toString(),
+                                style: GoogleFonts.inter(
+                                  color: Colors.black45,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                e["productname"].toString(),
+                                style: GoogleFonts.inter(
+                                  color: Colors.black,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 4.h,
+                              ),
+                              Text(
+                                e["quantity"].toString(),
+                                style: GoogleFonts.inter(
+                                  color: Colors.black45,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    e["price"].toString(),
                                     style: GoogleFonts.inter(
-                                      color: Color(0xff188806),
+                                      color: Colors.black,
                                       fontSize: 14.sp,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
-                                  style: ButtonStyle(
-                                    side: MaterialStateProperty.all<BorderSide>(
-                                      BorderSide(
-                                        style: BorderStyle.solid,
-                                        color: Colors.green,
-                                        width: 2
-                                            .w, // Change this to the width you want
+                                  // IconButton(onPressed: (){},icon: Icon(Icons.add),),
+                                  TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Add',
+                                      style: GoogleFonts.inter(
+                                        color: AppColors.greencolor,
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
+                                    style: ButtonStyle(
+                                      side:
+                                          MaterialStateProperty.all<BorderSide>(
+                                        BorderSide(
+                                          style: BorderStyle.solid,
+                                          color: Colors.green,
+                                          width: 2
+                                              .w, // Change this to the width you want
+                                        ),
+                                      ),
+                                      shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Color.fromARGB(255, 210, 210, 210)),
-                      ),
-                    ))
-                .toList(),
-          ),
-          SizedBox(
-            height: 65.h,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Color.fromARGB(255, 210, 210, 210)),
+                        ),
+                      ))
+                  .toList(),
+            ),
           ),
           Container(
             height: 60.h,
@@ -246,12 +307,12 @@ class _ShopScreenState extends State<ShopScreen> {
                       Icon(
                         Icons.home_outlined,
                         size: 25.sp,
-                        color: Colors.green,
+                        color: AppColors.blackcolor,
                       ),
                       Text(
                         "Home",
                         style: GoogleFonts.inter(
-                          color: Color(0xff188806),
+                          color: AppColors.blackcolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -261,7 +322,23 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('You Are At ShopScreen'),
+                        content: const Text('Select Another Tab'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Cancel'),
+                            child: const Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'OK'),
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -269,12 +346,12 @@ class _ShopScreenState extends State<ShopScreen> {
                       Icon(
                         Icons.storefront_sharp,
                         size: 25.sp,
-                        color: Colors.black,
+                        color: AppColors.greencolor,
                       ),
                       Text(
                         "Shop",
                         style: GoogleFonts.inter(
-                          color: Colors.black,
+                          color: AppColors.greencolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -284,7 +361,8 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => StoreScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -307,7 +385,8 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => CartScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -330,7 +409,10 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

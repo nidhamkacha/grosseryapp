@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
+import 'package:grosseryapp/view/home/cartscreen.dart';
+import 'package:grosseryapp/view/home/homescreen.dart';
+import 'package:grosseryapp/view/home/shopscreen.dart';
+import 'package:grosseryapp/view/tabbarscreens/profilescreen.dart';
 
 class StoreScreen extends StatefulWidget {
   const StoreScreen({super.key});
@@ -50,10 +54,26 @@ class _StoreScreenState extends State<StoreScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 30.0),
-                      child: Icon(
-                        size: 30,
-                        Icons.arrow_back,
-                        color: Colors.white,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ShopScreen()));
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.black38,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.arrow_back,
+                            size: 30,
+                            color: AppColors.whitecolor,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -63,9 +83,9 @@ class _StoreScreenState extends State<StoreScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Shop",
+                          "Stores",
                           style: GoogleFonts.inter(
-                            color: Colors.white,
+                            color: AppColors.whitecolor,
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
                           ),
@@ -76,7 +96,7 @@ class _StoreScreenState extends State<StoreScreen> {
                         Text(
                           "We have 36 vendors now",
                           style: GoogleFonts.inter(
-                            color: Colors.white,
+                            color: AppColors.whitecolor,
                             fontSize: 10,
                             fontWeight: FontWeight.w500,
                           ),
@@ -84,7 +104,7 @@ class _StoreScreenState extends State<StoreScreen> {
                       ],
                     ),
                     SizedBox(
-                      width: 100,
+                      width: 80,
                     ),
                     Container(
                       height: 50,
@@ -96,7 +116,7 @@ class _StoreScreenState extends State<StoreScreen> {
                       child: Icon(
                         Icons.shopping_cart_outlined,
                         size: 30,
-                        color: Colors.white,
+                        color: AppColors.whitecolor,
                       ),
                     ),
                     SizedBox(
@@ -112,7 +132,7 @@ class _StoreScreenState extends State<StoreScreen> {
                       child: Icon(
                         Icons.menu,
                         size: 30,
-                        color: Colors.white,
+                        color: AppColors.whitecolor,
                       ),
                     ),
                   ],
@@ -257,7 +277,8 @@ class _StoreScreenState extends State<StoreScreen> {
               children: [
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -265,7 +286,7 @@ class _StoreScreenState extends State<StoreScreen> {
                       Icon(
                         Icons.home_outlined,
                         size: 25,
-                        color: Colors.green,
+                        color: AppColors.blackcolor,
                       ),
                       Text(
                         "Home",
@@ -280,7 +301,8 @@ class _StoreScreenState extends State<StoreScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => ShopScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -303,7 +325,23 @@ class _StoreScreenState extends State<StoreScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('You Are At StoreScreen'),
+                        content: const Text('Select Another Tab'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Cancel'),
+                            child: const Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'OK'),
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -311,12 +349,12 @@ class _StoreScreenState extends State<StoreScreen> {
                       Icon(
                         Icons.location_on_outlined,
                         size: 25,
-                        color: Colors.black,
+                        color: AppColors.greencolor,
                       ),
                       Text(
                         "Stores",
                         style: GoogleFonts.inter(
-                          color: Color(0xff188806),
+                          color: AppColors.greencolor,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                         ),
@@ -326,7 +364,8 @@ class _StoreScreenState extends State<StoreScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => CartScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -349,7 +388,10 @@ class _StoreScreenState extends State<StoreScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

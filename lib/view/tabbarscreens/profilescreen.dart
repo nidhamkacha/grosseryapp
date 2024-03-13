@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/tabbarscreens/addresscreen.dart';
 import 'package:grosseryapp/view/tabbarscreens/myorderscreen.dart';
+import 'package:grosseryapp/view/tabbarscreens/mywalletscreen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -38,7 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Icon(
                             size: 30.sp,
                             Icons.arrow_back,
-                            color: Colors.white,
+                            color: AppColors.whitecolor,
                           ),
                         ),
                         SizedBox(
@@ -47,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Text(
                           "Profile",
                           style: GoogleFonts.inter(
-                            color: Colors.white,
+                            color: AppColors.whitecolor,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w500,
                           ),
@@ -68,7 +70,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Icon(
                             Icons.shopping_cart_outlined,
                             size: 30.sp,
-                            color: Colors.white,
+                            color: AppColors.whitecolor,
                           ),
                         ),
                         SizedBox(
@@ -84,7 +86,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Icon(
                             Icons.menu,
                             size: 30.sp,
-                            color: Colors.white,
+                            color: AppColors.whitecolor,
                           ),
                         ),
                       ],
@@ -241,7 +243,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: TabBarView(children: [
                   AddressScreen(),
                   MyOrderScreen(),
-                  AddressScreen(),
+                  MywalletScreen(),
                   AddressScreen(),
                 ]),
               )

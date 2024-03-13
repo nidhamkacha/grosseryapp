@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/auth/signinscreen.dart';
 
 class CreateAccoutScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
             Text(
               "Create Accout",
               style: GoogleFonts.inter(
-                color: Color(0xff000000),
+                color: AppColors.blackcolor,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w500,
               ),
@@ -37,7 +38,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
             Text(
               "Fill your information below or register",
               style: GoogleFonts.inter(
-                color: Color(0xff000000),
+                color: AppColors.blackcolor,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
               ),
@@ -45,7 +46,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
             Text(
               "With your social account",
               style: GoogleFonts.inter(
-                color: Color(0xff000000),
+                color: AppColors.blackcolor,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
               ),
@@ -209,13 +210,13 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                                   builder: (context) => SigninScreen()));
                         },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0XFF188806),
+                            backgroundColor: AppColors.greencolor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(7))),
                         child: Text(
                           "SIGN IN",
                           style: GoogleFonts.inter(
-                              color: Colors.white,
+                              color: AppColors.whitecolor,
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w500),
                         )),
@@ -232,13 +233,13 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                 Container(
                   height: 1.h,
                   width: 111.w,
-                  color: Colors.black38,
+                  color: AppColors.blackcolor,
                 ),
                 Text("Or sign in with"),
                 Container(
                   height: 1.h,
                   width: 111.w,
-                  color: Colors.black38,
+                  color: AppColors.blackcolor,
                 ),
               ],
             ),
@@ -253,7 +254,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                     height: 42.h,
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black38),
+                        border: Border.all(color: Colors.black26),
                         image: new DecorationImage(
                             //fit: BoxFit.fill,
                             image: new AssetImage(
@@ -264,7 +265,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                     height: 42.h,
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black38),
+                        border: Border.all(color: Colors.black26),
                         image: new DecorationImage(
                             //fit: BoxFit.fill,
                             image: new AssetImage(
@@ -275,7 +276,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                     height: 42.h,
                     decoration: new BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black38),
+                        border: Border.all(color: Colors.black26),
                         image: new DecorationImage(
                             //fit: BoxFit.fill,
                             image: new AssetImage(
@@ -292,7 +293,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                 Text(
                   "Already have an account? ",
                   style: GoogleFonts.inter(
-                      color: Colors.black,
+                      color: AppColors.blackcolor,
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400),
                 ),
@@ -309,7 +310,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                   child: Text(
                     'Sign In',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: AppColors.bluecolor,
                       decoration: TextDecoration.underline,
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/auth/createaccount.dart';
 import 'package:grosseryapp/view/auth/varificationscreen.dart';
 
@@ -31,7 +32,7 @@ class _SigninScreenState extends State<SigninScreen> {
             Text(
               "Sign In",
               style: GoogleFonts.inter(
-                color: Color(0xff000000),
+                color: AppColors.blackcolor,
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w500,
               ),
@@ -39,7 +40,7 @@ class _SigninScreenState extends State<SigninScreen> {
             Text(
               "Hi! Welcome back, you’ve been missed",
               style: GoogleFonts.inter(
-                color: Color(0xff000000),
+                color: AppColors.blackcolor,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
               ),
@@ -163,13 +164,13 @@ class _SigninScreenState extends State<SigninScreen> {
                                   builder: (context) => VarificationScreen()));
                         },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0XFF188806),
+                            backgroundColor: AppColors.greencolor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(7))),
                         child: Text(
                           "SIGN IN",
                           style: GoogleFonts.inter(
-                              color: Colors.white,
+                              color: AppColors.whitecolor,
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w500),
                         )),
@@ -186,13 +187,13 @@ class _SigninScreenState extends State<SigninScreen> {
                 Container(
                   height: 1.h,
                   width: 111.w,
-                  color: Colors.black,
+                  color: AppColors.blackcolor,
                 ),
                 Text("Or sign in with"),
                 Container(
                   height: 1.h,
                   width: 111.w,
-                  color: Colors.black,
+                  color: AppColors.blackcolor,
                 ),
               ],
             ),
@@ -246,7 +247,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 Text(
                   "Don't have an account?",
                   style: GoogleFonts.inter(
-                      color: Colors.black,
+                      color: AppColors.blackcolor,
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400),
                 ),
@@ -263,7 +264,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   child: Text(
                     'Sign Up',
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: AppColors.bluecolor,
                       decoration: TextDecoration.underline,
                     ),
                   ),

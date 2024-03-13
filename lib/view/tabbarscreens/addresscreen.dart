@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/cartscreen.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
 import 'package:grosseryapp/view/home/shopscreen.dart';
@@ -67,7 +68,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   },
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(Color(0xff188806)),
+                        MaterialStateProperty.all<Color>(AppColors.greencolor),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,12 +76,12 @@ class _AddressScreenState extends State<AddressScreen> {
                       Icon(
                         Icons.add_circle,
                         size: 18.sp,
-                        color: Colors.white,
+                        color: AppColors.whitecolor,
                       ),
                       Text(
                         "Add New",
                         style: GoogleFonts.inter(
-                          color: Colors.white,
+                          color: AppColors.whitecolor,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
@@ -128,7 +129,7 @@ class _AddressScreenState extends State<AddressScreen> {
                             Text(
                               e["title"].toString(),
                               style: TextStyle(
-                                color: Colors.black,
+                                color: AppColors.blackcolor,
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -136,7 +137,7 @@ class _AddressScreenState extends State<AddressScreen> {
                             Text(
                               e["subtitle"].toString(),
                               style: TextStyle(
-                                color: Colors.black,
+                                color: AppColors.blackcolor,
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w300,
                               ),
@@ -149,7 +150,7 @@ class _AddressScreenState extends State<AddressScreen> {
                         TextButton.icon(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
+                                MaterialStateProperty.all(AppColors.whitecolor),
                           ),
                           onPressed: () {},
                           icon: Column(
@@ -164,7 +165,7 @@ class _AddressScreenState extends State<AddressScreen> {
                               Text(
                                 'Edit',
                                 style: TextStyle(
-                                  color: Color(0xff188806),
+                                  color: AppColors.greencolor,
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -177,7 +178,7 @@ class _AddressScreenState extends State<AddressScreen> {
                         TextButton.icon(
                           style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(Colors.white),
+                                MaterialStateProperty.all(AppColors.whitecolor),
                           ),
                           onPressed: () {},
                           icon: Column(
@@ -192,7 +193,7 @@ class _AddressScreenState extends State<AddressScreen> {
                               Text(
                                 'Delete',
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: AppColors.blackcolor,
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -228,12 +229,12 @@ class _AddressScreenState extends State<AddressScreen> {
                       Icon(
                         Icons.home_outlined,
                         size: 25.sp,
-                        color: Colors.black,
+                        color: AppColors.blackcolor,
                       ),
                       Text(
                         "Home",
                         style: GoogleFonts.inter(
-                          color: Colors.black,
+                          color: AppColors.blackcolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -252,12 +253,12 @@ class _AddressScreenState extends State<AddressScreen> {
                       Icon(
                         Icons.storefront_sharp,
                         size: 25.sp,
-                        color: Colors.black,
+                        color: AppColors.blackcolor,
                       ),
                       Text(
                         "Shop",
                         style: GoogleFonts.inter(
-                          color: Colors.black,
+                          color: AppColors.blackcolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -276,12 +277,12 @@ class _AddressScreenState extends State<AddressScreen> {
                       Icon(
                         Icons.location_on_outlined,
                         size: 25.sp,
-                        color: Colors.black,
+                        color: AppColors.blackcolor,
                       ),
                       Text(
                         "Stores",
                         style: GoogleFonts.inter(
-                          color: Colors.black,
+                          color: AppColors.blackcolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -300,12 +301,12 @@ class _AddressScreenState extends State<AddressScreen> {
                       Icon(
                         Icons.shopping_basket_outlined,
                         size: 25.sp,
-                        color: Colors.black,
+                        color: AppColors.blackcolor,
                       ),
                       Text(
                         "Cart",
                         style: GoogleFonts.inter(
-                          color: Colors.black,
+                          color: AppColors.blackcolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -339,12 +340,12 @@ class _AddressScreenState extends State<AddressScreen> {
                       Icon(
                         Icons.person_outline_outlined,
                         size: 25.sp,
-                        color: Color(0xff188806),
+                        color: AppColors.greencolor,
                       ),
                       Text(
                         "Profile",
                         style: GoogleFonts.inter(
-                          color: Colors.green,
+                          color: AppColors.greencolor,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),

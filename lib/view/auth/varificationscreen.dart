@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
 
 class VarificationScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
           Text(
             "Verify Code",
             style: GoogleFonts.inter(
-              color: Color(0xff000000),
+              color: AppColors.blackcolor,
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
             ),
@@ -33,7 +34,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
           Text(
             "Please enter the code we just sent to email",
             style: GoogleFonts.inter(
-              color: Color(0xff000000),
+              color: AppColors.blackcolor,
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -41,7 +42,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
           Text(
             "example@gmail.com",
             style: GoogleFonts.inter(
-              color: Color(0xff188806),
+              color: AppColors.greencolor,
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
             ),
@@ -103,13 +104,13 @@ class _VarificationScreenState extends State<VarificationScreen> {
                         MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0XFF188806),
+                      backgroundColor: AppColors.greencolor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20))),
                   child: Text(
                     "Verify",
                     style: GoogleFonts.inter(
-                        color: Colors.white,
+                        color: AppColors.whitecolor,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w500),
                   )),

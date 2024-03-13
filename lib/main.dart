@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/view/auth/createaccount.dart';
-import 'package:grosseryapp/view/home/deliveryscreen.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
 import 'package:grosseryapp/view/onbording/onbordingscreen.dart';
 import 'package:grosseryapp/view/home/shopscreen.dart';
