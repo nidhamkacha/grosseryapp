@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/cartscreen.dart';
 import 'package:grosseryapp/view/home/shopscreen.dart';
@@ -100,21 +100,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Delivery in 15 minutes",
-                            style: GoogleFonts.inter(
-                              color: AppColors.whitecolor,
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                            ),
+                          GlobalText(
+                            text: "Delivery in 15 minutes",
+                            color: AppColors.whitecolor,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w500,
                           ),
-                          Text(
-                            "H.No. 2834 Street, 784 Sector, Lud...",
-                            style: GoogleFonts.inter(
-                              color: AppColors.whitecolor,
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w300,
-                            ),
+                          GlobalText(
+                            text: "H.No. 2834 Street, 784 Sector, Lud...",
+                            color: AppColors.whitecolor,
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w300,
                           ),
                         ],
                       ),
@@ -179,24 +175,19 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: Row(
                 children: [
-                  Text(
-                    "Shop Popular Categories",
-                    style: GoogleFonts.inter(
-                      color: Colors.black,
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  GlobalText(
+                    text: "Shop Popular Categories",
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
                   ),
                   SizedBox(
                     width: 68.w,
                   ),
-                  Text(
-                    "View All",
-                    style: GoogleFonts.inter(
-                      color: Color(0xff1C0D56),
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  GlobalText(
+                    text: "View All",
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff1C0D56),
                   ),
                   SizedBox(
                     width: 2.w,
@@ -258,34 +249,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Row(
                             children: [
-                              Text(
-                                "Fresh",
-                                style: GoogleFonts.inter(
-                                  color: Colors.black,
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                              GlobalText(
+                                text: "Fresh",
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w500,
                               ),
                               SizedBox(
                                 width: 5.w,
                               ),
-                              Text(
-                                "Fruits",
-                                style: GoogleFonts.inter(
-                                  color: Colors.black,
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                              GlobalText(
+                                text: "Fruits",
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w400,
                               ),
                             ],
                           ),
-                          Text(
-                            "Get Upto  30% Off",
-                            style: GoogleFonts.inter(
-                              color: Colors.black,
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400,
-                            ),
+                          GlobalText(
+                            text: "Get Upto  30% Off",
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
                           ),
                           TextButton(
                             onPressed: () {
@@ -298,13 +280,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  "Order Now",
-                                  style: GoogleFonts.inter(
-                                    color: AppColors.whitecolor,
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                GlobalText(
+                                  text: "Order Now",
+                                  color: AppColors.whitecolor,
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w600,
                                 ),
                                 Icon(
                                   Icons.arrow_forward_rounded,
@@ -359,13 +339,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           size: 25.sp,
                           color: Colors.green,
                         ),
-                        Text(
-                          "Home",
-                          style: GoogleFonts.inter(
-                            color: AppColors.greencolor,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        GlobalText(
+                          text: "Home",
+                          color: AppColors.greencolor,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                         ),
                       ],
                     ),
@@ -385,13 +363,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           size: 25.sp,
                           color: Colors.black,
                         ),
-                        Text(
-                          "Shop",
-                          style: GoogleFonts.inter(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        GlobalText(
+                          text: "Shop",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                         ),
                       ],
                     ),
@@ -411,13 +386,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           size: 25.sp,
                           color: Colors.black,
                         ),
-                        Text(
-                          "Stores",
-                          style: GoogleFonts.inter(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        GlobalText(
+                          text: "Stores",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                         ),
                       ],
                     ),
@@ -437,13 +409,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           size: 25.sp,
                           color: Colors.black,
                         ),
-                        Text(
-                          "Cart",
-                          style: GoogleFonts.inter(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        GlobalText(
+                          text: "Cart",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                         ),
                       ],
                     ),
@@ -463,13 +432,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           size: 25.sp,
                           color: Colors.black,
                         ),
-                        Text(
-                          "Profile",
-                          style: GoogleFonts.inter(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w400,
-                          ),
+                        GlobalText(
+                          text: "Profile",
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
                         ),
                       ],
                     ),

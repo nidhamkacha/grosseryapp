@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/comman/global_button.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
 
@@ -20,32 +21,32 @@ class _VarificationScreenState extends State<VarificationScreen> {
           SizedBox(
             height: 140.h,
           ),
-          Text(
-            "Verify Code",
-            style: GoogleFonts.inter(
-              color: AppColors.blackcolor,
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w700,
-            ),
+          GlobalText(
+            text: "Verify Code",
+            fontSize: 22.sp,
+            fontWeight: FontWeight.w700,
           ),
           SizedBox(
             height: 24.h,
           ),
-          Text(
-            "Please enter the code we just sent to email",
-            style: GoogleFonts.inter(
-              color: AppColors.blackcolor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-            ),
+          GlobalText(
+            text: "Please enter the code we just sent to email",
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
           ),
-          Text(
-            "example@gmail.com",
-            style: GoogleFonts.inter(
-              color: AppColors.greencolor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-            ),
+          // Text(
+          //   "example@gmail.com",
+          //   style: GoogleFonts.inter(
+          //     color: AppColors.greencolor,
+          //     fontSize: 14.sp,
+          //     fontWeight: FontWeight.w400,
+          //   ),
+          // ),
+          GlobalText(
+            text: "nidham78@gmail.com",
+            fontSize: 14.sp,
+            color: AppColors.greencolor,
+            fontWeight: FontWeight.w400,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +62,6 @@ class _VarificationScreenState extends State<VarificationScreen> {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          // height: 40,
                           width: 47.w,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -73,49 +73,33 @@ class _VarificationScreenState extends State<VarificationScreen> {
               ),
             ],
           ),
-          Text(
-            "Didn’t receive OTP?",
-            style: GoogleFonts.inter(
-              color: Colors.black38,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-            ),
+          GlobalText(
+            text: "Didn’t receive OTP?",
+            fontSize: 14.sp,
+            color: Colors.black38,
+            fontWeight: FontWeight.w400,
           ),
-          Text(
-            "Resend Code",
-            style: GoogleFonts.inter(
-              color: Colors.black,
-              fontSize: 14.sp,
+          GlobalText(
+            text: "Resend Code",
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
+            textStyle: TextStyle(
               decoration: TextDecoration.underline,
-              fontWeight: FontWeight.w500,
             ),
           ),
           SizedBox(
             height: 37.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: SizedBox(
-              height: 45.h,
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.greencolor,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
-                  child: Text(
-                    "Verify",
-                    style: GoogleFonts.inter(
-                        color: AppColors.whitecolor,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w500),
-                  )),
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: GlobalButton(
+              text: "Verify",
+              onPressed: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
+              },
             ),
-          ),
+          )
         ],
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/cartscreen.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
@@ -82,29 +84,25 @@ class _StoreScreenState extends State<StoreScreen> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Stores",
-                          style: GoogleFonts.inter(
-                            color: AppColors.whitecolor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        GlobalText(
+                          text: "Stores",
+                          color: AppColors.whitecolor,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w500,
                         ),
                         SizedBox(
-                          height: 7,
+                          height: 7.h,
                         ),
-                        Text(
-                          "We have 36 vendors now",
-                          style: GoogleFonts.inter(
-                            color: AppColors.whitecolor,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        GlobalText(
+                          text: "We have 36 vendors now",
+                          color: AppColors.whitecolor,
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w500,
+                        )
                       ],
                     ),
                     SizedBox(
-                      width: 80,
+                      width: 60.w,
                     ),
                     Container(
                       height: 50,
@@ -270,7 +268,7 @@ class _StoreScreenState extends State<StoreScreen> {
             height: 28,
           ),
           Container(
-            height: 60,
+            height: 70,
             width: double.infinity,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -285,16 +283,13 @@ class _StoreScreenState extends State<StoreScreen> {
                     children: [
                       Icon(
                         Icons.home_outlined,
-                        size: 25,
+                        size: 30,
                         color: AppColors.blackcolor,
                       ),
-                      Text(
-                        "Home",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Home",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
@@ -309,16 +304,13 @@ class _StoreScreenState extends State<StoreScreen> {
                     children: [
                       Icon(
                         Icons.storefront_sharp,
-                        size: 25,
+                        size: 30,
                         color: Colors.black,
                       ),
-                      Text(
-                        "Shop",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Shop",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
@@ -348,16 +340,14 @@ class _StoreScreenState extends State<StoreScreen> {
                     children: [
                       Icon(
                         Icons.location_on_outlined,
-                        size: 25,
+                        size: 30,
                         color: AppColors.greencolor,
                       ),
-                      Text(
-                        "Stores",
-                        style: GoogleFonts.inter(
-                          color: AppColors.greencolor,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Stores",
+                        fontSize: 12.sp,
+                        color: AppColors.greencolor,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
@@ -372,16 +362,13 @@ class _StoreScreenState extends State<StoreScreen> {
                     children: [
                       Icon(
                         Icons.shopping_basket_outlined,
-                        size: 25,
+                        size: 30,
                         color: Colors.black,
                       ),
-                      Text(
-                        "Cart",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Cart",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
@@ -398,16 +385,13 @@ class _StoreScreenState extends State<StoreScreen> {
                     children: [
                       Icon(
                         Icons.person_outline_outlined,
-                        size: 25,
+                        size: 30,
                         color: Colors.black,
                       ),
-                      Text(
-                        "Profile",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Profile",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),

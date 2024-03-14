@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/cartscreen.dart';
 import 'package:grosseryapp/view/home/homescreen.dart';
@@ -121,13 +120,11 @@ class _ShopScreenState extends State<ShopScreen> {
                     SizedBox(
                       width: 10.w,
                     ),
-                    Text(
-                      "Shop",
-                      style: GoogleFonts.inter(
-                        color: AppColors.whitecolor,
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    GlobalText(
+                      text: "Shop",
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.whitecolor,
                     ),
                     SizedBox(
                       width: 120.w,
@@ -250,13 +247,11 @@ class _ShopScreenState extends State<ShopScreen> {
                                   // IconButton(onPressed: (){},icon: Icon(Icons.add),),
                                   TextButton(
                                     onPressed: () {},
-                                    child: Text(
-                                      'Add',
-                                      style: GoogleFonts.inter(
-                                        color: AppColors.greencolor,
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                    child: GlobalText(
+                                      text: "Add",
+                                      color: AppColors.greencolor,
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600,
                                     ),
                                     style: ButtonStyle(
                                       side:
@@ -309,14 +304,11 @@ class _ShopScreenState extends State<ShopScreen> {
                         size: 25.sp,
                         color: AppColors.blackcolor,
                       ),
-                      Text(
-                        "Home",
-                        style: GoogleFonts.inter(
-                          color: AppColors.blackcolor,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      GlobalText(
+                        text: "Home",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                      )
                     ],
                   ),
                 ),
@@ -348,14 +340,12 @@ class _ShopScreenState extends State<ShopScreen> {
                         size: 25.sp,
                         color: AppColors.greencolor,
                       ),
-                      Text(
-                        "Shop",
-                        style: GoogleFonts.inter(
-                          color: AppColors.greencolor,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      GlobalText(
+                        text: "Shop",
+                        fontSize: 12.sp,
+                        color: AppColors.greencolor,
+                        fontWeight: FontWeight.w400,
+                      )
                     ],
                   ),
                 ),
@@ -372,13 +362,10 @@ class _ShopScreenState extends State<ShopScreen> {
                         size: 25.sp,
                         color: Colors.black,
                       ),
-                      Text(
-                        "Stores",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Stores",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
@@ -396,13 +383,10 @@ class _ShopScreenState extends State<ShopScreen> {
                         size: 25.sp,
                         color: Colors.black,
                       ),
-                      Text(
-                        "Cart",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Cart",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),
@@ -422,13 +406,10 @@ class _ShopScreenState extends State<ShopScreen> {
                         size: 25.sp,
                         color: Colors.black,
                       ),
-                      Text(
-                        "Profile",
-                        style: GoogleFonts.inter(
-                          color: Colors.black,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
+                      GlobalText(
+                        text: "Profile",
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ],
                   ),

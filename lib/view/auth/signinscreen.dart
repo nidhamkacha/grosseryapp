@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/comman/global_accounts.dart';
+import 'package:grosseryapp/res/comman/global_button.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
+import 'package:grosseryapp/res/comman/global_textfield.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/auth/createaccount.dart';
 import 'package:grosseryapp/view/auth/varificationscreen.dart';
@@ -29,21 +33,15 @@ class _SigninScreenState extends State<SigninScreen> {
             SizedBox(
               height: 125.h,
             ),
-            Text(
-              "Sign In",
-              style: GoogleFonts.inter(
-                color: AppColors.blackcolor,
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w500,
-              ),
+            GlobalText(
+              text: "Sign In",
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w500,
             ),
-            Text(
-              "Hi! Welcome back, you’ve been missed",
-              style: GoogleFonts.inter(
-                color: AppColors.blackcolor,
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w400,
-              ),
+            GlobalText(
+              text: "Hi! Welcome back, you’ve been missed",
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -52,46 +50,19 @@ class _SigninScreenState extends State<SigninScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Email",
-                      style: GoogleFonts.inter(
-                          fontSize: 16.sp, fontWeight: FontWeight.w700),
+                    child: GlobalText(
+                      text: "Email",
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
+                  GlobalTextfield(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 42.h,
-                      child: TextField(
-                        style: GoogleFonts.poppins(
-                            fontSize: 14.sp,
-                            color: Color(0XFF78A408),
-                            fontWeight: FontWeight.w500),
-                        // controller: _name,
-                        cursorColor: Colors.amber,
-                        decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0XFF78A408)),
-                              borderRadius: BorderRadius.circular(15)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          hintStyle: GoogleFonts.poppins(
-                              color: Colors.black45,
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Text(
-                        "Password",
-                        style: GoogleFonts.inter(
-                            fontSize: 16.sp, fontWeight: FontWeight.w700),
-                      ),
+                    child: GlobalText(
+                      text: "Password",
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   Padding(
@@ -153,28 +124,15 @@ class _SigninScreenState extends State<SigninScreen> {
                   SizedBox(
                     height: 36.h,
                   ),
-                  SizedBox(
-                    height: 42.h,
-                    width: double.infinity,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => VarificationScreen()));
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.greencolor,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(7))),
-                        child: Text(
-                          "SIGN IN",
-                          style: GoogleFonts.inter(
-                              color: AppColors.whitecolor,
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w500),
-                        )),
-                  ),
+                  GlobalButton(
+                    text: "SIGN IN",
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VarificationScreen()));
+                    },
+                  )
                 ],
               ),
             ),
@@ -203,39 +161,15 @@ class _SigninScreenState extends State<SigninScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                    width: 42.w,
-                    height: 42.h,
-                    decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black38),
-                        image: new DecorationImage(
-                            //fit: BoxFit.fill,
-                            image: new AssetImage(
-                                "assets/images/apple-logo (1) 1.png"),
-                            scale: 3))),
-                Container(
-                    width: 42.w,
-                    height: 42.h,
-                    decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black38),
-                        image: new DecorationImage(
-                            //fit: BoxFit.fill,
-                            image: new AssetImage(
-                                "assets/images/search (1) 1.png"),
-                            scale: 3))),
-                Container(
-                    width: 42.w,
-                    height: 42.h,
-                    decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Colors.black38),
-                        image: new DecorationImage(
-                            //fit: BoxFit.fill,
-                            image: new AssetImage(
-                                "assets/images/facebook (3) 1 (1).png"),
-                            scale: 3))),
+                GlobalAccounts(
+                  imgpath: "assets/images/apple.png",
+                ),
+                GlobalAccounts(
+                  imgpath: "assets/images/google.png",
+                ),
+                GlobalAccounts(
+                  imgpath: "assets/images/facebook.png",
+                ),
               ],
             ),
             SizedBox(
@@ -244,12 +178,10 @@ class _SigninScreenState extends State<SigninScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Don't have an account?",
-                  style: GoogleFonts.inter(
-                      color: AppColors.blackcolor,
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w400),
+                GlobalText(
+                  text: "Don't have an account?",
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
                 ),
                 SizedBox(
                   width: 10.w,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 
 class LogoutScreen extends StatefulWidget {
@@ -13,6 +14,10 @@ class LogoutScreen extends StatefulWidget {
 class _LogoutScreenState extends State<LogoutScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: GlobalText(
+        text: "Logout",
+      ),
+    );
   }
 }
