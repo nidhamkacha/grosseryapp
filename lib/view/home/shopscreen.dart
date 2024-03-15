@@ -4,9 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/home/cartscreen.dart';
-import 'package:grosseryapp/view/home/homescreen.dart';
-import 'package:grosseryapp/view/home/storescreen.dart';
-import 'package:grosseryapp/view/tabbarscreens/profilescreen.dart';
 
 class ShopScreen extends StatefulWidget {
   const ShopScreen({super.key});
@@ -93,30 +90,6 @@ class _ShopScreenState extends State<ShopScreen> {
                 ),
                 Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30.0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.black38,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.arrow_back,
-                            size: 30,
-                            color: AppColors.whitecolor,
-                          ),
-                        ),
-                      ),
-                    ),
                     SizedBox(
                       width: 10.w,
                     ),
@@ -127,7 +100,7 @@ class _ShopScreenState extends State<ShopScreen> {
                       color: AppColors.whitecolor,
                     ),
                     SizedBox(
-                      width: 120.w,
+                      width: 180.w,
                     ),
                     InkWell(
                       onTap: () {
@@ -283,138 +256,6 @@ class _ShopScreenState extends State<ShopScreen> {
                         ),
                       ))
                   .toList(),
-            ),
-          ),
-          Container(
-            height: 60.h,
-            width: double.infinity,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.home_outlined,
-                        size: 25.sp,
-                        color: AppColors.blackcolor,
-                      ),
-                      GlobalText(
-                        text: "Home",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                      )
-                    ],
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    showDialog<String>(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text('You Are At ShopScreen'),
-                        content: const Text('Select Another Tab'),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () => Navigator.pop(context, 'Cancel'),
-                            child: const Text('Cancel'),
-                          ),
-                          TextButton(
-                            onPressed: () => Navigator.pop(context, 'OK'),
-                            child: const Text('OK'),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.storefront_sharp,
-                        size: 25.sp,
-                        color: AppColors.greencolor,
-                      ),
-                      GlobalText(
-                        text: "Shop",
-                        fontSize: 12.sp,
-                        color: AppColors.greencolor,
-                        fontWeight: FontWeight.w400,
-                      )
-                    ],
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => StoreScreen()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.location_on_outlined,
-                        size: 25.sp,
-                        color: Colors.black,
-                      ),
-                      GlobalText(
-                        text: "Stores",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ],
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => CartScreen()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.shopping_basket_outlined,
-                        size: 25.sp,
-                        color: Colors.black,
-                      ),
-                      GlobalText(
-                        text: "Cart",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ],
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProfileScreen()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.person_outline_outlined,
-                        size: 25.sp,
-                        color: Colors.black,
-                      ),
-                      GlobalText(
-                        text: "Profile",
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
             ),
           ),
         ],

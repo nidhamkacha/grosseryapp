@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.1.0
   input_quantity: ^2.2.0
+  salomon_bottom_bar: ^3.3.2
   flutter_screenutil: 
 
 dev_dependencies:

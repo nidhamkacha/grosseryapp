@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
-import 'package:grosseryapp/view/home/cartscreen.dart';
-import 'package:grosseryapp/view/home/shopscreen.dart';
-import 'package:grosseryapp/view/home/storescreen.dart';
-import 'package:grosseryapp/view/tabbarscreens/profilescreen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -304,144 +300,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(
               height: 10.h,
-            ),
-            Container(
-              height: 60.h,
-              width: double.infinity,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('You Are At HomeScreen'),
-                          content: const Text('Select Another Tab'),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, 'Cancel'),
-                              child: const Text('Cancel'),
-                            ),
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                              child: const Text('OK'),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.home_outlined,
-                          size: 25.sp,
-                          color: Colors.green,
-                        ),
-                        GlobalText(
-                          text: "Home",
-                          color: AppColors.greencolor,
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ShopScreen()));
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.storefront_sharp,
-                          size: 25.sp,
-                          color: Colors.black,
-                        ),
-                        GlobalText(
-                          text: "Shop",
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => StoreScreen()));
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.location_on_outlined,
-                          size: 25.sp,
-                          color: Colors.black,
-                        ),
-                        GlobalText(
-                          text: "Stores",
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CartScreen()));
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.shopping_basket_outlined,
-                          size: 25.sp,
-                          color: Colors.black,
-                        ),
-                        GlobalText(
-                          text: "Cart",
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProfileScreen()));
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Icon(
-                          Icons.person_outline_outlined,
-                          size: 25.sp,
-                          color: Colors.black,
-                        ),
-                        GlobalText(
-                          text: "Profile",
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
             ),
           ],
         ),

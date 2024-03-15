@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_button.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
-import 'package:grosseryapp/view/home/homescreen.dart';
+import 'package:grosseryapp/view/bottom/bottom_bar.dart';
+
 
 class VarificationScreen extends StatefulWidget {
   const VarificationScreen({super.key});
@@ -95,8 +96,10 @@ class _VarificationScreenState extends State<VarificationScreen> {
             child: GlobalButton(
               text: "Verify",
               onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => BottomNevBarScreen()));
               },
             ),
           )

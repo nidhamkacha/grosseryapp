@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/auth/signinscreen.dart';
 
@@ -21,40 +22,30 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
           SizedBox(
             height: 150.h,
           ),
-          Text(
-            "Select from Our",
-            style: GoogleFonts.inter(
-              color: AppColors.greencolor,
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w500,
-            ),
+          GlobalText(
+            text: "Select from Our",
+            fontSize: 20.sp,
+            color: AppColors.greencolor,
+            fontWeight: FontWeight.w500,
           ),
-          Text(
-            "Best Menu",
-            style: GoogleFonts.inter(
-              color: AppColors.greencolor,
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w500,
-            ),
+          GlobalText(
+            text: "Best Menu",
+            fontSize: 20.sp,
+            color: AppColors.greencolor,
+            fontWeight: FontWeight.w500,
           ),
           SizedBox(
             height: 14.h,
           ),
-          Text(
-            "Pick your food from our menu",
-            style: GoogleFonts.inter(
-              color: AppColors.blackcolor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-            ),
+          GlobalText(
+            text: "Pick your food from our menu",
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
           ),
-          Text(
-            "More than 35 items.",
-            style: GoogleFonts.inter(
-              color: AppColors.blackcolor,
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w400,
-            ),
+          GlobalText(
+            text: "More than 35 items.",
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w400,
           ),
           SizedBox(
             height: 14.h,
@@ -112,39 +103,42 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Skip",
-                  style: GoogleFonts.inter(
-                    color: AppColors.blackcolor,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                  ),
+                GlobalText(
+                  text: "Skip",
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
                 ),
                 SizedBox(
                   height: 44.h,
                   width: 90.w,
                   child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SigninScreen(),
-                            ));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.greencolor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                      child: Text(
-                        'Next',
-                        style: GoogleFonts.inter(
-                          color: AppColors.whitecolor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      )),
-                )
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SigninScreen(),
+                          ));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.greencolor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+                    // child: Text(
+                    //   'Next',
+                    //   style: GoogleFonts.inter(
+                    //     color: AppColors.whitecolor,
+                    //     fontSize: 14.sp,
+                    //     fontWeight: FontWeight.w600,
+                    //   ),
+                    // )),
+                    child: GlobalText(
+                      text: "Next",
+                      color: AppColors.whitecolor,
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                ),
               ],
             ),
           )

@@ -30,7 +30,7 @@ class _MywalletScreenState extends State<MywalletScreen> {
       "icon": Icons.add_circle_outline_rounded,
       "status": "Cashback",
       "tid": "Transaction ID:509165488",
-      "price": "₹ 800",
+      "price": "₹800",
       "subtitle": "On 13 Oct 16, 01:43 PM",
     },
   ];
