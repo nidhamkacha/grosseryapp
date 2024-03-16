@@ -116,22 +116,13 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SigninScreen(),
-                          ));
+                              builder: (context) => SigninScreen()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.greencolor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)),
                     ),
-                    // child: Text(
-                    //   'Next',
-                    //   style: GoogleFonts.inter(
-                    //     color: AppColors.whitecolor,
-                    //     fontSize: 14.sp,
-                    //     fontWeight: FontWeight.w600,
-                    //   ),
-                    // )),
                     child: GlobalText(
                       text: "Next",
                       color: AppColors.whitecolor,

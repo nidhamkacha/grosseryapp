@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
+import 'package:grosseryapp/view/bottom/bottom_bar.dart';
 import 'package:grosseryapp/view/home/storescreen.dart';
 import 'package:grosseryapp/view/paymenttabscreens/paymentscreen.dart';
 import 'package:input_quantity/input_quantity.dart';
@@ -71,10 +72,7 @@ class _CartScreenState extends State<CartScreen> {
                         padding: const EdgeInsets.only(left: 10.0),
                         child: InkWell(
                           onTap: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => StoreScreen()));
+                            Navigator.pop(context);
                           },
                           child: Container(
                             height: 50,
@@ -254,7 +252,7 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => PaymentScreen()));

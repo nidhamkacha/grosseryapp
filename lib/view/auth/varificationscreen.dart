@@ -5,7 +5,6 @@ import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 import 'package:grosseryapp/view/bottom/bottom_bar.dart';
 
-
 class VarificationScreen extends StatefulWidget {
   const VarificationScreen({super.key});
 
@@ -35,14 +34,6 @@ class _VarificationScreenState extends State<VarificationScreen> {
             fontSize: 14.sp,
             fontWeight: FontWeight.w400,
           ),
-          // Text(
-          //   "example@gmail.com",
-          //   style: GoogleFonts.inter(
-          //     color: AppColors.greencolor,
-          //     fontSize: 14.sp,
-          //     fontWeight: FontWeight.w400,
-          //   ),
-          // ),
           GlobalText(
             text: "nidham78@gmail.com",
             fontSize: 14.sp,
@@ -96,7 +87,7 @@ class _VarificationScreenState extends State<VarificationScreen> {
             child: GlobalButton(
               text: "Verify",
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => BottomNevBarScreen()));

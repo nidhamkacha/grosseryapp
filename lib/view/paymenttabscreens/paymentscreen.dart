@@ -54,10 +54,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                           color: Colors.white,
                         ),
                         onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BottomNevBarScreen()));
+                          Navigator.pop(context);
                         },
                       ),
                       Text(

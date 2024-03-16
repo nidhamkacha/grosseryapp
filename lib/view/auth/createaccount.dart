@@ -148,7 +148,7 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                   GlobalButton(
                     text: "SIGN IN",
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => SigninScreen()));
@@ -208,13 +208,13 @@ class _CreateAccoutScreenState extends State<CreateAccoutScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushReplacement(
+                    Navigator.pop(
                         context,
                         MaterialPageRoute(
                             builder: (context) => SigninScreen()));
                   },
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
                       color: AppColors.bluecolor,
                       decoration: TextDecoration.underline,

@@ -127,7 +127,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   GlobalButton(
                     text: "SIGN IN",
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => VarificationScreen()));
@@ -188,7 +188,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => CreateAccoutScreen()));
