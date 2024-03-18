@@ -4,39 +4,39 @@ import 'package:grosseryapp/res/comman/global_button.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 
-class WalletPaymentScreen extends StatefulWidget {
-  const WalletPaymentScreen({super.key});
+class NetBankingScreen extends StatefulWidget {
+  const NetBankingScreen({super.key});
 
   @override
-  State<WalletPaymentScreen> createState() => _WalletPaymentScreenState();
+  State<NetBankingScreen> createState() => _NetBankingScreenState();
 }
 
-class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
+class _NetBankingScreenState extends State<NetBankingScreen> {
   @override
   var data = [
     {
       "imagepath": "assets/images/upi.png",
-      "names": "UPI",
+      "names": "HDFC",
     },
     {
       "imagepath": "assets/images/phonepay.png",
-      "names": "PhonePay",
+      "names": "ICIC",
     },
     {
       "imagepath": "assets/images/paytm.png",
-      "names": "Paytm",
+      "names": "AXIS",
     },
     {
       "imagepath": "assets/images/visa-card.png",
-      "names": "Visacard",
+      "names": "STATE",
     },
     {
       "imagepath": "assets/images/mastercard.png",
-      "names": "Mastercard",
+      "names": "SBI ",
     },
     {
       "imagepath": "assets/images/rupay.png",
-      "names": "Rupay",
+      "names": "BOI",
     },
   ];
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: GlobalText(
-                text: "Wallets",
+                text: "NetBankings",
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w500,
               ),
@@ -72,7 +72,7 @@ class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
                     ...data.map(
                       (e) => Container(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          padding: const EdgeInsets.only(left: 10.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -102,16 +102,20 @@ class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
                                       onChanged: (value) {},
                                     ),
                                   ]),
-                              GlobalText(
-                                text: e["names"].toString(),
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              Text(
-                                'LINK',
-                                style: TextStyle(
-                                  color: AppColors.bluecolor,
-                                ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  GlobalText(
+                                    text: e["names"].toString(),
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Icon(Icons.arrow_forward_sharp),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

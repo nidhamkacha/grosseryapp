@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
-import 'package:grosseryapp/view/bottom/bottom_bar.dart';
+import 'package:grosseryapp/view/paymenttabscreens/cardpayment.dart';
+import 'package:grosseryapp/view/paymenttabscreens/cashpayment.dart';
+import 'package:grosseryapp/view/paymenttabscreens/netbanking.dart';
 import 'package:grosseryapp/view/paymenttabscreens/walletpayment.dart';
+import 'package:grosseryapp/view/paymenttabscreens/googlepay.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -35,7 +38,7 @@ class _PaymentScreenState extends State<PaymentScreen>
         body: Column(
           children: [
             Container(
-              height: 150.h,
+              height: 140.h,
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
                 Color(0xff971DE2),
@@ -260,7 +263,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                           height: 3,
                         ),
                         Text(
-                          'Google pay',
+                          'Pay Via UPI',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 color: _controller.index == 3
@@ -300,7 +303,7 @@ class _PaymentScreenState extends State<PaymentScreen>
                           height: 3,
                         ),
                         Text(
-                          'Money',
+                          'Cash',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 color: _controller.index == 4
@@ -321,10 +324,10 @@ class _PaymentScreenState extends State<PaymentScreen>
                 controller: _controller,
                 children: [
                   WalletPaymentScreen(),
-                  WalletPaymentScreen(),
-                  WalletPaymentScreen(),
-                  WalletPaymentScreen(),
-                  WalletPaymentScreen(),
+                  CardPaymentScreen(),
+                  NetBankingScreen(),
+                  PayViaUpi(),
+                  CashPayment(),
                 ],
               ),
             )

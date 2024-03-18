@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
-
+import 'package:grosseryapp/view/sidebar/sidebarscreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -129,17 +129,27 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         width: 5.w,
                       ),
-                      Container(
-                        height: 40.h,
-                        width: 40.w,
-                        decoration: BoxDecoration(
-                          color: Colors.black38,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.menu,
-                          size: 25.sp,
-                          color: AppColors.whitecolor,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SideBarScreen(),
+                              ));
+                        },
+                        child: Container(
+                          height: 40.h,
+                          width: 40.w,
+                          decoration: BoxDecoration(
+                            color: Colors.black38,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.menu,
+                            size: 25.sp,
+                            color: AppColors
+                                .whitecolor, // I'm assuming AppColors.whitecolor is a custom color
+                          ),
                         ),
                       ),
                     ],
