@@ -1,8 +1,15 @@
+// ignore_for_file: override_on_non_overriding_member
+
+import 'dart:developer';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_button.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
+import 'package:grosseryapp/view/confirm/confirm_order.dart';
 
 class WalletPaymentScreen extends StatefulWidget {
   const WalletPaymentScreen({super.key});
@@ -10,6 +17,8 @@ class WalletPaymentScreen extends StatefulWidget {
   @override
   State<WalletPaymentScreen> createState() => _WalletPaymentScreenState();
 }
+
+enum SingingCharacter { UPI, PhonePay, Paytm, Visacard, Mastercard, Rupay }
 
 class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
   @override
@@ -39,6 +48,16 @@ class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
       "names": "Rupay",
     },
   ];
+  // List<String> name = [
+  //   'raj',
+  //   'rahol',
+  //   'fefd',
+  // ];
+
+  // List<int> isChecked = List.generate(3, (index) => 0);
+
+  SingingCharacter? _character = SingingCharacter.UPI;
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -78,30 +97,40 @@ class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      width: 42.w,
-                                      height: 42.h,
-                                      decoration: new BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border:
-                                            Border.all(color: Colors.black12),
-                                        image: new DecorationImage(
-                                            image: new AssetImage(
-                                                e["imagepath"].toString()),
-                                            scale: 3),
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    width: 42.w,
+                                    height: 42.h,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: Colors.black12),
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                            e["imagepath"].toString()),
+                                        scale: 3,
                                       ),
                                     ),
-                                    Radio(
-                                      fillColor: MaterialStatePropertyAll(
-                                          Colors.black26),
-                                      value: 1,
-                                      groupValue: 2,
-                                      onChanged: (value) {},
+                                  ),
+                                  SizedBox(
+                                    // Wrap RadioListTile in a SizedBox
+                                    width: 20.w,
+                                    child: RadioListTile<SingingCharacter>(
+                                      activeColor: Colors.blue,
+                                      // title: Text(e["names"].toString()),
+                                      value: SingingCharacter
+                                          .values[data.indexOf(e)],
+                                      groupValue: _character,
+                                      onChanged: (SingingCharacter? value) {
+                                        setState(() {
+                                          _character = value;
+                                        });
+                                      },
                                     ),
-                                  ]),
+                                  ),
+                                ],
+                              ),
                               GlobalText(
                                 text: e["names"].toString(),
                                 fontSize: 14.sp,
@@ -121,19 +150,72 @@ class _WalletPaymentScreenState extends State<WalletPaymentScreen> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 20.h,
-            ),
+
+            // SizedBox(
+            //   height: 100,
+            //   child: ListView.builder(
+            //       itemCount: name.length,
+            //       shrinkWrap: true,
+            //       itemBuilder: (context, index) {
+            //         return Card(
+            //           child: Row(
+            //             children: [
+            //               Text(name[index]),
+            //               Radio(
+            //                 //title: const Text('Thomas Jefferson'),
+            //                 value: isChecked[index],
+            //                 groupValue: SingingCharacter,
+            //                 onChanged: (value) {
+            //                   setState(() {
+            //                     isChecked[index] = value as int;
+            //                   });
+            //                 },
+            //               ),
+            //               // Checkbox(
+            //               //   checkColor: Colors.white,
+            //               //   value: isChecked[index],
+            //               //   onChanged: (bool? value) {
+            //               //     setState(() {
+            //               //       isChecked[index] = value!;
+            //               //       log(value.toString());
+            //               //     });
+            //               //   },
+            //               // ),
+            //             ],
+            //           ),
+            //         );
+            //       }),
+            // ),
+            // // Checkbox(
+            // //   checkColor: Colors.white,
+            // //   value: isChecked[index],
+            // //   onChanged: (bool? value) {
+            // //     setState(() {
+            // //       isChecked = value!;
+            // //       log(value.toString());
+            // //     });
+            // //   },
+            // // ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10.0),
               child: GlobalButton(
                 text: "Pay Now",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ConfirmOrderScreen(),
+                    ),
+                  );
+                },
               ),
             ),
           ],

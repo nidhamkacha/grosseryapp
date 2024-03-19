@@ -1,3 +1,5 @@
+// ignore_for_file: override_on_non_overriding_member
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';

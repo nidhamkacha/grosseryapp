@@ -1,3 +1,5 @@
+// ignore_for_file: override_on_non_overriding_member
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_button.dart';
@@ -8,6 +10,13 @@ class PayViaUpi extends StatefulWidget {
 
   @override
   State<PayViaUpi> createState() => _PayViaUpiState();
+}
+
+enum SingingCharacter {
+  mrmohan7854okaxis,
+  namebankokpay,
+  namebank0okpay,
+  mrmohan78540okaxis
 }
 
 class _PayViaUpiState extends State<PayViaUpi> {
@@ -22,7 +31,7 @@ class _PayViaUpiState extends State<PayViaUpi> {
       "imagepath": "assets/images/phonepay.png",
     },
     {
-      "name": "mrsiva4785@okaxis",
+      "name": "C",
       "imagepath": "assets/images/paytm.png",
     },
     {
@@ -30,6 +39,8 @@ class _PayViaUpiState extends State<PayViaUpi> {
       "imagepath": "assets/images/rupay.png",
     },
   ];
+  SingingCharacter? _character = SingingCharacter.mrmohan78540okaxis;
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -64,30 +75,39 @@ class _PayViaUpiState extends State<PayViaUpi> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: 42.w,
-                                    height: 42.h,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(color: Colors.black12),
-                                      image: new DecorationImage(
-                                          image: new AssetImage(
-                                              e["imagepath"].toString()),
-                                          scale: 3),
-                                    ),
-                                  ),
-                                  Radio(
-                                    fillColor: MaterialStatePropertyAll(
-                                        Colors.black26),
-                                    value: 1,
-                                    groupValue: 2,
-                                    onChanged: (value) {},
-                                  ),
-                                ]),
+                            Row(children: [
+                              Container(
+                                width: 42.w,
+                                height: 42.h,
+                                decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(color: Colors.black12),
+                                  image: new DecorationImage(
+                                      image: new AssetImage(
+                                          e["imagepath"].toString()),
+                                      scale: 3),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 265.w,
+                              ),
+                              SizedBox(
+                                // Wrap RadioListTile in a SizedBox
+                                width: 20.w,
+                                child: RadioListTile<SingingCharacter>(
+                                  activeColor: Colors.blue,
+                                  // title: Text(e["names"].toString()),
+                                  value:
+                                      SingingCharacter.values[items.indexOf(e)],
+                                  groupValue: _character,
+                                  onChanged: (SingingCharacter? value) {
+                                    setState(() {
+                                      _character = value;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ]),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [

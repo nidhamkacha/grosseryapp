@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grosseryapp/view/auth/signinscreen.dart';
-import 'package:grosseryapp/view/home/homescreen.dart';
 import 'package:grosseryapp/view/spless/spless_screen.dart';
 
 void main() {

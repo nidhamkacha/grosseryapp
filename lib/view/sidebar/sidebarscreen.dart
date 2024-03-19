@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grosseryapp/res/comman/global_button.dart';
+import 'package:grosseryapp/res/comman/global_text.dart';
 import 'package:grosseryapp/res/static/app_colors.dart';
 
 class SideBarScreen extends StatefulWidget {
@@ -11,6 +14,14 @@ class SideBarScreen extends StatefulWidget {
 
 class _SideBarScreenState extends State<SideBarScreen> {
   @override
+  List<String> categories = [
+    "Home",
+    "Shop",
+    "Stores",
+    "Mega Menu",
+    "Pages",
+    "Accounts",
+  ];
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -41,6 +52,9 @@ class _SideBarScreenState extends State<SideBarScreen> {
               Icon(Icons.close)
             ],
           ),
+          SizedBox(
+            height: 20.h,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Container(
@@ -63,6 +77,88 @@ class _SideBarScreenState extends State<SideBarScreen> {
               ),
             ),
           ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Icon(
+                  size: 30.sp,
+                  Icons.location_on_outlined,
+                  color: AppColors.bluecolor,
+                ),
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GlobalText(
+                    text: "Delivery in 16 minutes",
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  GlobalText(
+                    text: "H.No. 2834 Street, 784 Sector, Adyar, Chennai",
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 10.w,
+              ),
+              Icon(
+                Icons.expand_more,
+                size: 25.sp,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 40.h,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: GlobalButton(
+              text: "All Deparments",
+              onPressed: () {},
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: categories.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 30.0),
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GlobalText(
+                            text: categories[index],
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Icon(
+                            Icons.expand_more,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );

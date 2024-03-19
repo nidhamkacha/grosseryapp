@@ -1,8 +1,8 @@
+// ignore_for_file: override_on_non_overriding_member
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_button.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
-import 'package:grosseryapp/res/static/app_colors.dart';
 
 class NetBankingScreen extends StatefulWidget {
   const NetBankingScreen({super.key});
@@ -10,6 +10,8 @@ class NetBankingScreen extends StatefulWidget {
   @override
   State<NetBankingScreen> createState() => _NetBankingScreenState();
 }
+
+enum SingingCharacter { HDFC, ICIC, AXIS, STATE, SBI, BOI }
 
 class _NetBankingScreenState extends State<NetBankingScreen> {
   @override
@@ -39,6 +41,7 @@ class _NetBankingScreenState extends State<NetBankingScreen> {
       "names": "BOI",
     },
   ];
+  SingingCharacter? _character = SingingCharacter.AXIS;
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -77,31 +80,46 @@ class _NetBankingScreenState extends State<NetBankingScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      width: 42.w,
-                                      height: 42.h,
-                                      decoration: new BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        border:
-                                            Border.all(color: Colors.black12),
-                                        image: new DecorationImage(
-                                            image: new AssetImage(
-                                                e["imagepath"].toString()),
-                                            scale: 3),
-                                      ),
-                                    ),
-                                    Radio(
-                                      fillColor: MaterialStatePropertyAll(
-                                          Colors.black26),
-                                      value: 1,
-                                      groupValue: 2,
-                                      onChanged: (value) {},
-                                    ),
-                                  ]),
+                              Row(children: [
+                                Container(
+                                  width: 42.w,
+                                  height: 42.h,
+                                  decoration: new BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(color: Colors.black12),
+                                    image: new DecorationImage(
+                                        image: new AssetImage(
+                                            e["imagepath"].toString()),
+                                        scale: 3),
+                                  ),
+                                ),
+
+                                // Radio(
+                                //   fillColor: MaterialStatePropertyAll(
+                                //       Colors.black26),
+                                //   value: 1,
+                                //   groupValue: 2,
+                                //   onChanged: (value) {},
+                                // ),
+                                SizedBox(
+                                  width: 90.w,
+                                ),
+                                SizedBox(
+                                  width: 20.w,
+                                  child: RadioListTile<SingingCharacter>(
+                                    activeColor: Colors.blue,
+                                    // title: Text(e["names"].toString()),
+                                    value: SingingCharacter
+                                        .values[data.indexOf(e)],
+                                    groupValue: _character,
+                                    onChanged: (SingingCharacter? value) {
+                                      setState(() {
+                                        _character = value;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ]),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,

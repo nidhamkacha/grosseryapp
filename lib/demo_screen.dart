@@ -40,3 +40,53 @@
 //     );
 //   }
 // }
+
+import 'package:flutter/material.dart';
+
+// Checkbox and Radio
+//  SizedBox(
+//               height: 300,
+//               child: ListView.builder(
+//                   itemCount: name.length,
+//                   shrinkWrap: true,
+//                   itemBuilder: (context, index) {
+//                     return Card(
+//                       child: Row(
+//                         children: [
+//                           Text(name[index]),
+//                           Checkbox(
+//                             checkColor: Colors.white,
+//                             value: isChecked[index],
+//                             onChanged: (bool? value) {
+//                               setState(() {
+//                                 isChecked[index] = value!;
+//                                 log(value.toString());
+//                               });
+//                             },
+//                           ),
+//                         ],
+//                       ),
+//                     );
+//                   }),
+//             ),
+
+// RadioListTile<SingingCharacter>(
+//               title: const Text('Lafayette'),
+//               value: SingingCharacter.lafayette,
+//               groupValue: _character,
+//               onChanged: (SingingCharacter? value) {
+//                 setState(() {
+//                   _character = value;
+//                 });
+//               },
+//             ),
+            // RadioListTile<SingingCharacter>(
+            //   title: const Text('Thomas Jefferson'),
+            //   value: SingingCharacter.jefferson,
+            //   groupValue: _character,
+            //   onChanged: (SingingCharacter? value) {
+            //     setState(() {
+            //       _character = value;
+            //     });
+            //   },
+            // ),
