@@ -1,3 +1,4 @@
+// ignore_for_file: override_on_non_overriding_member
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +50,12 @@ class _SideBarScreenState extends State<SideBarScreen> {
               SizedBox(
                 width: 150.w,
               ),
-              Icon(Icons.close)
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(Icons.close),
+              ),
             ],
           ),
           SizedBox(

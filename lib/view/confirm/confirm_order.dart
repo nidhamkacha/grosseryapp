@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grosseryapp/res/comman/global_button.dart';
 import 'package:grosseryapp/res/comman/global_text.dart';
+import 'package:grosseryapp/view/home/homescreen.dart';
 
 class ConfirmOrderScreen extends StatefulWidget {
   const ConfirmOrderScreen({super.key});
@@ -46,7 +47,13 @@ class _ConfirmOrderScreenState extends State<ConfirmOrderScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 80.0),
             child: GlobalButton(
               text: "My Account",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ));
+              },
             ),
           )
         ],
