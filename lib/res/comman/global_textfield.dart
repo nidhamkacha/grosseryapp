@@ -7,29 +7,29 @@ class GlobalTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: 42.h,
-        child: TextField(
-          style: GoogleFonts.poppins(
-              fontSize: 14.sp,
-              color: Color(0XFF78A408),
-              fontWeight: FontWeight.w500),
-          // controller: _name,
-          cursorColor: Colors.amber,
-          decoration: InputDecoration(
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0XFF78A408)),
-                borderRadius: BorderRadius.circular(15)),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-            hintStyle: GoogleFonts.poppins(
-                color: Colors.black45,
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w600),
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          height: 42.h,
+          child: TextField(
+            style: GoogleFonts.poppins(
+                fontSize: 14.sp,
+                color: Color(0XFF78A408),
+                fontWeight: FontWeight.w500),
+            // controller: _name,
+            cursorColor: Colors.amber,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Color(0XFF78A408)),
+                  borderRadius: BorderRadius.circular(15)),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+              hintStyle: GoogleFonts.poppins(
+                  color: Colors.black45,
+                  fontSize: 17.sp,
+                  fontWeight: FontWeight.w600),
+            ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
