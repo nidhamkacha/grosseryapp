@@ -116,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     child: Column(
                       children: [
                         Container(
-                          height: 42,
+                          height: 42, 
                           width: 42,
                           child: Image.asset(
                             'assets/images/address.png',

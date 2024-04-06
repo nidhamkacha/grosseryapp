@@ -90,10 +90,14 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
           ),
           Container(
             height: 288.h,
+            width: double.infinity, // Set width to fill the available space
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images/Online Groceries-cuate 1.png'))),
+              image: DecorationImage(
+                image:
+                    AssetImage('assets/images/Animation - 1712399406947.gif'),
+                fit: BoxFit.cover, // Adjust the fit as needed
+              ),
+            ),
           ),
           SizedBox(
             height: 125.h,
